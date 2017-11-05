@@ -67,3 +67,5 @@ C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\Microsoft.Owi
 C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\obj\Debug\FAHASA.csprojResolveAssemblyReference.cache
 C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\obj\Debug\FAHASA.dll
 C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\obj\Debug\FAHASA.pdb
+D:\TAILIEUCNTT\XÂY DỰNG PM THEO MÔ HÌNH PHÂN LỚP\Binh\FahasaMVC\FAHASA\obj\Debug\FAHASA.csprojResolveAssemblyReference.cache
+D:\TAILIEUCNTT\XÂY DỰNG PM THEO MÔ HÌNH PHÂN LỚP\Binh\FahasaMVC\FAHASA\obj\Debug\FAHASA.csproj.CoreCompileInputs.cache
