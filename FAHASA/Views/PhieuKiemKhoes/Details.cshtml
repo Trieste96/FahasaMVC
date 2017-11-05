@@ -1,0 +1,60 @@
+﻿@model FAHASA.Models.PhieuKiemKho
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PhieuKiemKho</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayGio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayGio)
+        </dd>
+    </dl>
+</div>
+<p>
+    <a href="/CT_PhieuKiemKho/Create/@Model.MaPhieu">Insert CT_PhieuKiemKho</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            MaSach
+        </th>
+        <th>
+            TenSach
+        </th>
+        <th>
+            SoLuongTon
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model.CTPhieuKiemKhoes)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaSach)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sach.TenSach)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuongTon)
+            </td>
+            <td>
+                <a href="/CT_PhieuKiemKho/Edit/@item.ID">Edit</a>
+                <a href="/CT_PhieuKiemKho/Delete/@item.ID">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaPhieu }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

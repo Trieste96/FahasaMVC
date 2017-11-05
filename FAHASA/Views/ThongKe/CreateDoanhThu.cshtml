@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewBag.Title = "CreateDoanhThu";
+}
+
+<h2>CreateDoanhThu</h2>
+
+<form method="post" action="/ThongKe/CreateDoanhThu">
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        <div class="form-group">
+            <label class="control-label col-md-2">TuNgayGio</label>
+            <div class="col-md-10">
+                <input id="TuNgayGio" name="TuNgayGio" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">DenNgayGio</label>
+            <div class="col-md-10">
+                <input id="DenNgayGio" name="DenNgayGio" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@if (ViewBag.DoanhThus != null)
+{
+    <table class="table">
+        <tr>
+            <th>
+                MaSach
+            </th>
+            <th>
+                TenSach
+            </th>
+            <th>
+                SoLuongNhap
+            </th>
+            <th>
+                TongGiaNhap
+            </th>
+            <th>
+                SoLuongBanDuoc
+            </th>
+            <th>
+                TongGiaBanDuoc
+            </th>
+            <th>
+                TamTinh
+            </th>
+        </tr>
+
+        @foreach (var item in ViewBag.DoanhThus)
+        {
+            <tr>
+                <td>
+                    @item.MaSach
+                </td>
+                <td>
+                    @item.TenSach
+                </td>
+                <td>
+                    @item.SoLuongNhap
+                </td>
+                <td>
+                    @item.TongGiaNhap
+                </td>
+                <td>
+                    @item.SoLuongBanDuoc
+                </td>
+                <td>
+                    @item.TongGiaBanDuoc
+                </td>
+                <td>
+                    @item.TamTinh
+                </td>
+            </tr>
+        }
+        <tr>
+            <td colspan="6">
+                Tổng Doanh Thu
+            </td>
+            <td>
+                @ViewBag.DoanhThu
+            </td>
+
+        </tr>
+    </table>
+
+}

@@ -145,6 +145,7 @@
     </Reference>
     <Reference Include="WebGrease, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -154,20 +155,63 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FahasaInit.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\BookController.cs" />
+    <Compile Include="Controllers\BaoCaoBanHangsController.cs" />
+    <Compile Include="Controllers\CT_BaoCaoBanHangController.cs" />
+    <Compile Include="Controllers\CT_PhieuGhiNoDaiLyController.cs" />
+    <Compile Include="Controllers\CT_PhieuKiemKhoController.cs" />
+    <Compile Include="Controllers\CT_PhieuNhapController.cs" />
+    <Compile Include="Controllers\CT_PhieuXuatController.cs" />
+    <Compile Include="Controllers\CT_PhieuYeuCauBanController.cs" />
+    <Compile Include="Controllers\CT_PhieuYeuCauMuaController.cs" />
+    <Compile Include="Controllers\CT_ThongKeChoNXBController.cs" />
+    <Compile Include="Controllers\DaiLiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\NhanViensController.cs" />
+    <Compile Include="Controllers\NhaXuatBansController.cs" />
+    <Compile Include="Controllers\PhieuGhiNoDaiLiesController.cs" />
+    <Compile Include="Controllers\PhieuKiemKhoesController.cs" />
+    <Compile Include="Controllers\PhieuNhapsController.cs" />
+    <Compile Include="Controllers\PhieuXuatsController.cs" />
+    <Compile Include="Controllers\PhieuYeuCauBansController.cs" />
+    <Compile Include="Controllers\PhieuYeuCauMuasController.cs" />
+    <Compile Include="Controllers\SachesController.cs" />
+    <Compile Include="Controllers\ThongKeChoNXBsController.cs" />
+    <Compile Include="Controllers\ThongKeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\BaoCaoBanHang.cs" />
+    <Compile Include="Models\CT_BaoCaoBanHang.cs" />
+    <Compile Include="Models\CT_PhieuGhiNoDaiLy.cs" />
+    <Compile Include="Models\CT_PhieuKiemKho.cs" />
+    <Compile Include="Models\CT_PhieuNhap.cs" />
+    <Compile Include="Models\CT_PhieuXuat.cs" />
+    <Compile Include="Models\CT_PhieuYeuCauBan.cs" />
+    <Compile Include="Models\CT_PhieuYeuCauMua.cs" />
+    <Compile Include="Models\CT_ThongKeChoNXB.cs" />
+    <Compile Include="Models\DaiLy.cs" />
+    <Compile Include="Models\DoanhThu.cs" />
+    <Compile Include="Models\FahasaContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\NhanVien.cs" />
+    <Compile Include="Models\PhieuGhiNoDaiLy.cs" />
+    <Compile Include="Models\PhieuKiemKho.cs" />
+    <Compile Include="Models\PhieuNhap.cs" />
+    <Compile Include="Models\PhieuXuat.cs" />
+    <Compile Include="Models\PhieuYeuCauBan.cs" />
+    <Compile Include="Models\PhieuYeuCauMua.cs" />
+    <Compile Include="Models\Sach.cs" />
+    <Compile Include="Models\ThongKe.cs" />
+    <Compile Include="Models\ThongKeChoNXB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -178,6 +222,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Compile Include="Models\NhaXuatBan.cs" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -226,10 +271,112 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Saches\Create.cshtml" />
+    <Content Include="Views\Saches\Delete.cshtml" />
+    <Content Include="Views\Saches\Details.cshtml" />
+    <Content Include="Views\Saches\Edit.cshtml" />
+    <Content Include="Views\Saches\Index.cshtml" />
+    <Content Include="Views\DaiLies\Create.cshtml" />
+    <Content Include="Views\DaiLies\Delete.cshtml" />
+    <Content Include="Views\DaiLies\Details.cshtml" />
+    <Content Include="Views\DaiLies\Edit.cshtml" />
+    <Content Include="Views\DaiLies\Index.cshtml" />
+    <Content Include="Views\BaoCaoBanHangs\Create.cshtml" />
+    <Content Include="Views\BaoCaoBanHangs\Delete.cshtml" />
+    <Content Include="Views\BaoCaoBanHangs\Details.cshtml" />
+    <Content Include="Views\BaoCaoBanHangs\Edit.cshtml" />
+    <Content Include="Views\BaoCaoBanHangs\Index.cshtml" />
+    <Content Include="Views\CT_BaoCaoBanHang\Create.cshtml" />
+    <Content Include="Views\CT_BaoCaoBanHang\Delete.cshtml" />
+    <Content Include="Views\CT_BaoCaoBanHang\Details.cshtml" />
+    <Content Include="Views\CT_BaoCaoBanHang\Edit.cshtml" />
+    <Content Include="Views\CT_BaoCaoBanHang\Index.cshtml" />
+    <Content Include="Views\NhaXuatBans\Create.cshtml" />
+    <Content Include="Views\NhaXuatBans\Delete.cshtml" />
+    <Content Include="Views\NhaXuatBans\Details.cshtml" />
+    <Content Include="Views\NhaXuatBans\Edit.cshtml" />
+    <Content Include="Views\NhaXuatBans\Index.cshtml" />
+    <Content Include="Views\PhieuNhaps\Create.cshtml" />
+    <Content Include="Views\PhieuNhaps\Delete.cshtml" />
+    <Content Include="Views\PhieuNhaps\Details.cshtml" />
+    <Content Include="Views\PhieuNhaps\Edit.cshtml" />
+    <Content Include="Views\PhieuNhaps\Index.cshtml" />
+    <Content Include="Views\PhieuXuats\Create.cshtml" />
+    <Content Include="Views\PhieuXuats\Delete.cshtml" />
+    <Content Include="Views\PhieuXuats\Details.cshtml" />
+    <Content Include="Views\PhieuXuats\Edit.cshtml" />
+    <Content Include="Views\PhieuXuats\Index.cshtml" />
+    <Content Include="Views\PhieuGhiNoDaiLies\Create.cshtml" />
+    <Content Include="Views\PhieuGhiNoDaiLies\Delete.cshtml" />
+    <Content Include="Views\PhieuGhiNoDaiLies\Details.cshtml" />
+    <Content Include="Views\PhieuGhiNoDaiLies\Edit.cshtml" />
+    <Content Include="Views\PhieuGhiNoDaiLies\Index.cshtml" />
+    <Content Include="Views\PhieuKiemKhoes\Create.cshtml" />
+    <Content Include="Views\PhieuKiemKhoes\Delete.cshtml" />
+    <Content Include="Views\PhieuKiemKhoes\Details.cshtml" />
+    <Content Include="Views\PhieuKiemKhoes\Edit.cshtml" />
+    <Content Include="Views\PhieuKiemKhoes\Index.cshtml" />
+    <Content Include="Views\PhieuYeuCauBans\Create.cshtml" />
+    <Content Include="Views\PhieuYeuCauBans\Delete.cshtml" />
+    <Content Include="Views\PhieuYeuCauBans\Details.cshtml" />
+    <Content Include="Views\PhieuYeuCauBans\Edit.cshtml" />
+    <Content Include="Views\PhieuYeuCauBans\Index.cshtml" />
+    <Content Include="Views\PhieuYeuCauMuas\Create.cshtml" />
+    <Content Include="Views\PhieuYeuCauMuas\Delete.cshtml" />
+    <Content Include="Views\PhieuYeuCauMuas\Details.cshtml" />
+    <Content Include="Views\PhieuYeuCauMuas\Edit.cshtml" />
+    <Content Include="Views\PhieuYeuCauMuas\Index.cshtml" />
+    <Content Include="Views\ThongKeChoNXBs\Create.cshtml" />
+    <Content Include="Views\ThongKeChoNXBs\Delete.cshtml" />
+    <Content Include="Views\ThongKeChoNXBs\Details.cshtml" />
+    <Content Include="Views\ThongKeChoNXBs\Edit.cshtml" />
+    <Content Include="Views\ThongKeChoNXBs\Index.cshtml" />
+    <Content Include="Views\NhanViens\Create.cshtml" />
+    <Content Include="Views\NhanViens\Delete.cshtml" />
+    <Content Include="Views\NhanViens\Details.cshtml" />
+    <Content Include="Views\NhanViens\Edit.cshtml" />
+    <Content Include="Views\NhanViens\Index.cshtml" />
+    <Content Include="Views\CT_PhieuGhiNoDaiLy\Create.cshtml" />
+    <Content Include="Views\CT_PhieuGhiNoDaiLy\Delete.cshtml" />
+    <Content Include="Views\CT_PhieuGhiNoDaiLy\Details.cshtml" />
+    <Content Include="Views\CT_PhieuGhiNoDaiLy\Edit.cshtml" />
+    <Content Include="Views\CT_PhieuGhiNoDaiLy\Index.cshtml" />
+    <Content Include="Views\CT_PhieuKiemKho\Create.cshtml" />
+    <Content Include="Views\CT_PhieuKiemKho\Delete.cshtml" />
+    <Content Include="Views\CT_PhieuKiemKho\Details.cshtml" />
+    <Content Include="Views\CT_PhieuKiemKho\Edit.cshtml" />
+    <Content Include="Views\CT_PhieuKiemKho\Index.cshtml" />
+    <Content Include="Views\CT_PhieuNhap\Create.cshtml" />
+    <Content Include="Views\CT_PhieuNhap\Delete.cshtml" />
+    <Content Include="Views\CT_PhieuNhap\Details.cshtml" />
+    <Content Include="Views\CT_PhieuNhap\Edit.cshtml" />
+    <Content Include="Views\CT_PhieuNhap\Index.cshtml" />
+    <Content Include="Views\CT_PhieuXuat\Create.cshtml" />
+    <Content Include="Views\CT_PhieuXuat\Delete.cshtml" />
+    <Content Include="Views\CT_PhieuXuat\Details.cshtml" />
+    <Content Include="Views\CT_PhieuXuat\Edit.cshtml" />
+    <Content Include="Views\CT_PhieuXuat\Index.cshtml" />
+    <Content Include="Views\CT_PhieuYeuCauBan\Create.cshtml" />
+    <Content Include="Views\CT_PhieuYeuCauBan\Delete.cshtml" />
+    <Content Include="Views\CT_PhieuYeuCauBan\Details.cshtml" />
+    <Content Include="Views\CT_PhieuYeuCauBan\Edit.cshtml" />
+    <Content Include="Views\CT_PhieuYeuCauBan\Index.cshtml" />
+    <Content Include="Views\CT_PhieuYeuCauMua\Create.cshtml" />
+    <Content Include="Views\CT_PhieuYeuCauMua\Delete.cshtml" />
+    <Content Include="Views\CT_PhieuYeuCauMua\Details.cshtml" />
+    <Content Include="Views\CT_PhieuYeuCauMua\Edit.cshtml" />
+    <Content Include="Views\CT_PhieuYeuCauMua\Index.cshtml" />
+    <Content Include="Views\CT_ThongKeChoNXB\Create.cshtml" />
+    <Content Include="Views\CT_ThongKeChoNXB\Delete.cshtml" />
+    <Content Include="Views\CT_ThongKeChoNXB\Details.cshtml" />
+    <Content Include="Views\CT_ThongKeChoNXB\Edit.cshtml" />
+    <Content Include="Views\CT_ThongKeChoNXB\Index.cshtml" />
+    <Content Include="Views\ThongKe\Index.cshtml" />
+    <Content Include="Views\ThongKe\CreateTongChi.cshtml" />
+    <Content Include="Views\ThongKe\CreateDoanhThu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Book\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
