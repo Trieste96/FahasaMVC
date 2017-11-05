@@ -57,7 +57,6 @@ namespace FAHASA.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Edit", new { id=baoCaoBanHang.MaBC});
             }
-
             ViewBag.MaDaiLy = new SelectList(db.DaiLies, "MaDaiLy", "TenDaiLy", baoCaoBanHang.MaDaiLy);
             return View(baoCaoBanHang);
         }
@@ -84,7 +83,7 @@ namespace FAHASA.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaBC,NgayGio,TongTien,MaDaiLy")] BaoCaoBanHang baoCaoBanHang)
+        public ActionResult Edit([Bind(Include = "TinhTrang,MaBC,NgayGio,TongTien,MaDaiLy")] BaoCaoBanHang baoCaoBanHang)
         {
             if (ModelState.IsValid)
             {
@@ -117,7 +116,8 @@ namespace FAHASA.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             BaoCaoBanHang baoCaoBanHang = db.BaoCaoBanHangs.Find(id);
-            db.BaoCaoBanHangs.Remove(baoCaoBanHang);
+            baoCaoBanHang.TinhTrang = false;
+            db.Entry(baoCaoBanHang).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -8,7 +8,7 @@
     <Property Name="NgayGio" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="TongTien" Type="Int32" Nullable="false" />
     <Property Name="MaDaiLy" Type="Int32" Nullable="false" />
-    <Property Name="TinhTrang" Type="Boolean" Nullable="false" />
+    <Property Name="TinhTrang" Type="Boolean" Nullable="false" DefaultValue="True" />
     <NavigationProperty Name="DaiLy" Relationship="Self.FK__BaoCaoBan__MaDai__164452B1" FromRole="BaoCaoBanHang" ToRole="DaiLy" />
     <NavigationProperty Name="CT_BaoCaoBanHang" Relationship="Self.FK__CT_BaoCaoB__MaBC__1A14E395" FromRole="BaoCaoBanHang" ToRole="CT_BaoCaoBanHang" />
   </EntityType>

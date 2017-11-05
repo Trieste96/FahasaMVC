@@ -17,9 +17,10 @@ namespace FAHASA.Controllers
         private void recalculateSum(CT_BaoCaoBanHang cT_BaoCaoBanHang)
         {
             //Tính lại tổng tiền
-            var original = db.BaoCaoBanHangs.Find(cT_BaoCaoBanHang.MaBC);
-            original.TongTien = db.CT_BaoCaoBanHang.Where(ct => ct.MaBC == cT_BaoCaoBanHang.MaBC).Sum(ct => ct.ThanhTien).GetValueOrDefault();
-            db.Entry(original).State = EntityState.Modified;
+            var phieu = db.BaoCaoBanHangs.Find(cT_BaoCaoBanHang.MaBC);
+
+            phieu.TongTien = db.CT_BaoCaoBanHang.Where(ct => ct.MaBC == cT_BaoCaoBanHang.MaBC).Sum(ct => ct.ThanhTien).GetValueOrDefault();
+            db.Entry(phieu).State = EntityState.Modified;
             db.SaveChanges();
         }
         // GET: CT_BaoCaoBanHang
@@ -48,7 +49,9 @@ namespace FAHASA.Controllers
         public ActionResult Create(int? MaBC)
         {
             ViewBag.MaBC = MaBC;
-            ViewBag.MaSach = new SelectList(db.Saches, "MaSach", "TenSach");
+            IQueryable<Sach> ct_phieu = db.CT_BaoCaoBanHang.Where(ct => ct.MaBC == MaBC).Select(ct => ct.Sach);
+
+            ViewBag.MaSach = new SelectList(db.Saches.Except(ct_phieu), "MaSach", "TenSach");
             return View();
         }
 
@@ -136,7 +139,7 @@ namespace FAHASA.Controllers
             CT_BaoCaoBanHang cT_BaoCaoBanHang = db.CT_BaoCaoBanHang.Find(id);
             db.CT_BaoCaoBanHang.Remove(cT_BaoCaoBanHang);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Edit", "BaoCaoBanHang", new { id = cT_BaoCaoBanHang.MaBC });
         }
 
         protected override void Dispose(bool disposing)
