@@ -1,4 +1,4 @@
-﻿@model QuanLySachT.CT_PhieuNhap
+﻿@model QuanLySachT.CT_PhieuXuat
 
 @{
     ViewBag.Title = "Delete";
@@ -8,23 +8,15 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>CT_PhieuNhap</h4>
+    <h4>CT_PhieuXuat</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.DonGiaNhap)
+            @Html.DisplayNameFor(model => model.DonGiaXuat)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DonGiaNhap)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SoLuong)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SoLuong)
+            @Html.DisplayFor(model => model.DonGiaXuat)
         </dd>
 
         <dt>
@@ -36,11 +28,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PhieuNhap.NguoiGiaoSach)
+            @Html.DisplayNameFor(model => model.SoLuong)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.PhieuNhap.NguoiGiaoSach)
+            @Html.DisplayFor(model => model.SoLuong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhieuXuat.NguoiNhan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhieuXuat.NguoiNhan)
         </dd>
 
         <dt>
