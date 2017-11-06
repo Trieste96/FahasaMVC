@@ -12,7 +12,7 @@ namespace FAHASA.Controllers
 {
     public class BaoCaoBanHangsController : Controller
     {
-        private FahasaContext db = new FahasaContext();
+        private FAHASAEntities db = new FAHASAEntities();
 
         // GET: BaoCaoBanHangs
         public ActionResult Index()
@@ -33,8 +33,8 @@ namespace FAHASA.Controllers
             {
                 return HttpNotFound();
             }
-            db.Entry<BaoCaoBanHang>(baoCaoBanHang).Collection(bcbh => bcbh.CTBaoCaoBanHangs).Load();
-            foreach (var item in baoCaoBanHang.CTBaoCaoBanHangs)
+            db.Entry<BaoCaoBanHang>(baoCaoBanHang).Collection(bcbh => bcbh.CT_BaoCaoBanHang).Load();
+            foreach (var item in baoCaoBanHang.CT_BaoCaoBanHang)
             {
                 item.Sach = db.Saches.Find(item.MaSach);
             }

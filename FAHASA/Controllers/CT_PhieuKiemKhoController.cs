@@ -12,7 +12,7 @@ namespace FAHASA.Controllers
 {
     public class CT_PhieuKiemKhoController : Controller
     {
-        private FahasaContext db = new FahasaContext();
+        private FAHASAEntities db = new FAHASAEntities();
 
         // GET: CT_PhieuKiemKho
         public ActionResult Index()
@@ -64,8 +64,8 @@ namespace FAHASA.Controllers
                     int SoLuongTonTruoc = 0;
                     if (temp != null)
                     {
-                        db.Entry<PhieuKiemKho>(temp).Collection(pkk => pkk.CTPhieuKiemKhoes).Load();
-                        foreach (var ctpkk in temp.CTPhieuKiemKhoes)
+                        db.Entry<PhieuKiemKho>(temp).Collection(pkk => pkk.CT_PhieuKiemKho).Load();
+                        foreach (var ctpkk in temp.CT_PhieuKiemKho)
                         {
                             if (ctpkk.MaSach == cT_PhieuKiemKho.MaSach)
                             {
@@ -77,8 +77,8 @@ namespace FAHASA.Controllers
                     ICollection<PhieuNhap> phieuNhaps = db.PhieuNhaps.Where(pn => pn.TinhTrang == true && pn.NgayGio <= ngayKiemKho && pn.NgayGio > ngayKiemKhoGanNhat).ToList();
                     foreach(var phieuNhap in phieuNhaps)
                     {
-                        db.Entry<PhieuNhap>(phieuNhap).Collection(pn => pn.CTPhieuNhaps).Load();
-                        foreach(var ctpn in phieuNhap.CTPhieuNhaps)
+                        db.Entry<PhieuNhap>(phieuNhap).Collection(pn => pn.CT_PhieuNhap).Load();
+                        foreach(var ctpn in phieuNhap.CT_PhieuNhap)
                         {
                             if(ctpn.MaSach == cT_PhieuKiemKho.MaSach)
                             {
@@ -89,8 +89,8 @@ namespace FAHASA.Controllers
                     ICollection<PhieuXuat> phieuXuats = db.PhieuXuats.Where(px => px.TinhTrang == true && px.NgayGio <= ngayKiemKho && px.NgayGio > ngayKiemKhoGanNhat).ToList();
                     foreach (var phieuXuat in phieuXuats)
                     {
-                        db.Entry<PhieuXuat>(phieuXuat).Collection(pn => pn.CTPhieuXuats).Load();
-                        foreach (var ctpn in phieuXuat.CTPhieuXuats)
+                        db.Entry<PhieuXuat>(phieuXuat).Collection(pn => pn.CT_PhieuXuat).Load();
+                        foreach (var ctpn in phieuXuat.CT_PhieuXuat)
                         {
                             if (ctpn.MaSach == cT_PhieuKiemKho.MaSach)
                             {
@@ -147,8 +147,8 @@ namespace FAHASA.Controllers
                     int SoLuongTonTruoc = 0;
                     if(temp != null)
                     {
-                        db.Entry<PhieuKiemKho>(temp).Collection(pkk => pkk.CTPhieuKiemKhoes).Load();
-                        foreach(var ctpkk in temp.CTPhieuKiemKhoes)
+                        db.Entry<PhieuKiemKho>(temp).Collection(pkk => pkk.CT_PhieuKiemKho).Load();
+                        foreach(var ctpkk in temp.CT_PhieuKiemKho)
                         {
                             if(ctpkk.MaSach == cT_PhieuKiemKho.MaSach)
                             {
@@ -160,8 +160,8 @@ namespace FAHASA.Controllers
                     ICollection<PhieuNhap> phieuNhaps = db.PhieuNhaps.Where(pn => pn.TinhTrang == true && pn.NgayGio <= ngayKiemKho && pn.NgayGio > ngayKiemKhoGanNhat).ToList();
                     foreach (var phieuNhap in phieuNhaps)
                     {
-                        db.Entry<PhieuNhap>(phieuNhap).Collection(pn => pn.CTPhieuNhaps).Load();
-                        foreach (var ctpn in phieuNhap.CTPhieuNhaps)
+                        db.Entry<PhieuNhap>(phieuNhap).Collection(pn => pn.CT_PhieuNhap).Load();
+                        foreach (var ctpn in phieuNhap.CT_PhieuNhap)
                         {
                             if (ctpn.MaSach == cT_PhieuKiemKho.MaSach)
                             {
@@ -172,8 +172,8 @@ namespace FAHASA.Controllers
                     ICollection<PhieuXuat> phieuXuats = db.PhieuXuats.Where(px => px.TinhTrang == true && px.NgayGio <= ngayKiemKho && px.NgayGio > ngayKiemKhoGanNhat).ToList();
                     foreach (var phieuXuat in phieuXuats)
                     {
-                        db.Entry<PhieuXuat>(phieuXuat).Collection(pn => pn.CTPhieuXuats).Load();
-                        foreach (var ctpn in phieuXuat.CTPhieuXuats)
+                        db.Entry<PhieuXuat>(phieuXuat).Collection(pn => pn.CT_PhieuXuat).Load();
+                        foreach (var ctpn in phieuXuat.CT_PhieuXuat)
                         {
                             if (ctpn.MaSach == cT_PhieuKiemKho.MaSach)
                             {

@@ -12,7 +12,7 @@ namespace FAHASA.Controllers
 {
     public class CT_PhieuYeuCauMuaController : Controller
     {
-        private FahasaContext db = new FahasaContext();
+        private FAHASAEntities db = new FAHASAEntities();
 
         // GET: CT_PhieuYeuCauMua
         public ActionResult Index()
@@ -60,8 +60,8 @@ namespace FAHASA.Controllers
                 int SoLuongTonTruoc = 0;
                 foreach(var phieuNhap in PhieuNhaps)
                 {
-                    db.Entry(phieuNhap).Collection(pn => pn.CTPhieuNhaps).Load();
-                    foreach(var ctpn in phieuNhap.CTPhieuNhaps)
+                    db.Entry(phieuNhap).Collection(pn => pn.CT_PhieuNhap).Load();
+                    foreach(var ctpn in phieuNhap.CT_PhieuNhap)
                     {
                         if(ctpn.MaSach == cT_PhieuYeuCauMua.MaSach)
                         {
@@ -72,8 +72,8 @@ namespace FAHASA.Controllers
                 }
                 foreach(var phieuXuat in PhieuXuats)
                 {
-                    db.Entry(phieuXuat).Collection(px => px.CTPhieuXuats).Load();
-                    foreach(var ctpx in phieuXuat.CTPhieuXuats)
+                    db.Entry(phieuXuat).Collection(px => px.CT_PhieuXuat).Load();
+                    foreach(var ctpx in phieuXuat.CT_PhieuXuat)
                     {
                         if(ctpx.MaSach == cT_PhieuYeuCauMua.MaSach)
                         {
@@ -94,8 +94,8 @@ namespace FAHASA.Controllers
                 int SoLuongTonSau = 0;
                 foreach (var phieuNhap in PhieuNhap1s)
                 {
-                    db.Entry(phieuNhap).Collection(pn => pn.CTPhieuNhaps).Load();
-                    foreach (var ctpn in phieuNhap.CTPhieuNhaps)
+                    db.Entry(phieuNhap).Collection(pn => pn.CT_PhieuNhap).Load();
+                    foreach (var ctpn in phieuNhap.CT_PhieuNhap)
                     {
                         if (ctpn.MaSach == cT_PhieuYeuCauMua.MaSach)
                         {
@@ -106,8 +106,8 @@ namespace FAHASA.Controllers
                 }
                 foreach (var phieuXuat in PhieuXuat1s)
                 {
-                    db.Entry(phieuXuat).Collection(px => px.CTPhieuXuats).Load();
-                    foreach (var ctpx in phieuXuat.CTPhieuXuats)
+                    db.Entry(phieuXuat).Collection(px => px.CT_PhieuXuat).Load();
+                    foreach (var ctpx in phieuXuat.CT_PhieuXuat)
                     {
                         if (ctpx.MaSach == cT_PhieuYeuCauMua.MaSach)
                         {
@@ -172,8 +172,8 @@ namespace FAHASA.Controllers
                 int SoLuongTonTruoc = 0;
                 foreach (var phieuNhap in PhieuNhaps)
                 {
-                    db.Entry(phieuNhap).Collection(pn => pn.CTPhieuNhaps).Load();
-                    foreach (var ctpn in phieuNhap.CTPhieuNhaps)
+                    db.Entry(phieuNhap).Collection(pn => pn.CT_PhieuNhap).Load();
+                    foreach (var ctpn in phieuNhap.CT_PhieuNhap)
                     {
                         if (ctpn.MaSach == cT_PhieuYeuCauMua.MaSach)
                         {
@@ -184,8 +184,8 @@ namespace FAHASA.Controllers
                 }
                 foreach (var phieuXuat in PhieuXuats)
                 {
-                    db.Entry(phieuXuat).Collection(px => px.CTPhieuXuats).Load();
-                    foreach (var ctpx in phieuXuat.CTPhieuXuats)
+                    db.Entry(phieuXuat).Collection(px => px.CT_PhieuXuat).Load();
+                    foreach (var ctpx in phieuXuat.CT_PhieuXuat)
                     {
                         if (ctpx.MaSach == cT_PhieuYeuCauMua.MaSach)
                         {
@@ -209,8 +209,8 @@ namespace FAHASA.Controllers
                 int SoLuongTonSau = 0;
                 foreach (var phieuNhap in PhieuNhap1s)
                 {
-                    db.Entry(phieuNhap).Collection(pn => pn.CTPhieuNhaps).Load();
-                    foreach (var ctpn in phieuNhap.CTPhieuNhaps)
+                    db.Entry(phieuNhap).Collection(pn => pn.CT_PhieuNhap).Load();
+                    foreach (var ctpn in phieuNhap.CT_PhieuNhap)
                     {
                         if (ctpn.MaSach == cT_PhieuYeuCauMua.MaSach)
                         {
@@ -221,8 +221,8 @@ namespace FAHASA.Controllers
                 }
                 foreach (var phieuXuat in PhieuXuat1s)
                 {
-                    db.Entry(phieuXuat).Collection(px => px.CTPhieuXuats).Load();
-                    foreach (var ctpx in phieuXuat.CTPhieuXuats)
+                    db.Entry(phieuXuat).Collection(px => px.CT_PhieuXuat).Load();
+                    foreach (var ctpx in phieuXuat.CT_PhieuXuat)
                     {
                         if (ctpx.MaSach == cT_PhieuYeuCauMua.MaSach)
                         {

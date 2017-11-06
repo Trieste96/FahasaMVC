@@ -12,7 +12,7 @@ namespace FAHASA.Controllers
 {
     public class CT_PhieuYeuCauBanController : Controller
     {
-        private FahasaContext db = new FahasaContext();
+        private FAHASAEntities db = new FAHASAEntities();
 
         // GET: CT_PhieuYeuCauBan
         public ActionResult Index()

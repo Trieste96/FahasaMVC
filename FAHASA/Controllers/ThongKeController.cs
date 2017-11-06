@@ -9,7 +9,7 @@ namespace FAHASA.Controllers
 {
     public class ThongKeController : Controller
     {
-        private FahasaContext db = new FahasaContext();
+        private FAHASAEntities db = new FAHASAEntities();
 
         // GET: ThongKe
         public ActionResult Index()
@@ -36,8 +36,8 @@ namespace FAHASA.Controllers
                 int SoTienPhaiTra = 0;
                 foreach (var phieuNhap in phieuNhaps)
                 {
-                    db.Entry<PhieuNhap>(phieuNhap).Collection(pn => pn.CTPhieuNhaps).Load();
-                    foreach (var ctpn in phieuNhap.CTPhieuNhaps)
+                    db.Entry<PhieuNhap>(phieuNhap).Collection(pn => pn.CT_PhieuNhap).Load();
+                    foreach (var ctpn in phieuNhap.CT_PhieuNhap)
                     {
                         SoTienPhaiTra += ctpn.ThanhTien;
                     }
@@ -70,8 +70,8 @@ namespace FAHASA.Controllers
                 ICollection<PhieuNhap> phieuNhaps = db.PhieuNhaps.Where(pn =>pn.TinhTrang == true && pn.NgayGio >= TuNgayGio && pn.NgayGio <= DenNgayGio).ToList();
                 foreach (var phieuNhap in phieuNhaps)
                 {
-                    db.Entry(phieuNhap).Collection(pn => pn.CTPhieuNhaps).Load();
-                    foreach (var ctpn in phieuNhap.CTPhieuNhaps)
+                    db.Entry(phieuNhap).Collection(pn => pn.CT_PhieuNhap).Load();
+                    foreach (var ctpn in phieuNhap.CT_PhieuNhap)
                     {
                         if (ctpn.MaSach == sach.MaSach)
                         {
@@ -87,8 +87,8 @@ namespace FAHASA.Controllers
                 ICollection<BaoCaoBanHang> baoCaoBanHangs = db.BaoCaoBanHangs.Where(bcbh => bcbh.TinhTrang == true && bcbh.NgayGio >= TuNgayGio && bcbh.NgayGio <= DenNgayGio).ToList();
                 foreach (var baoCaoBanHang in baoCaoBanHangs)
                 {
-                    db.Entry(baoCaoBanHang).Collection(bcbh => bcbh.CTBaoCaoBanHangs).Load();
-                    foreach (var ctbc in baoCaoBanHang.CTBaoCaoBanHangs)
+                    db.Entry(baoCaoBanHang).Collection(bcbh => bcbh.CT_BaoCaoBanHang).Load();
+                    foreach (var ctbc in baoCaoBanHang.CT_BaoCaoBanHang)
                     {
                         if (ctbc.MaSach == sach.MaSach)
                         {
@@ -103,6 +103,7 @@ namespace FAHASA.Controllers
                 DoanhThu += doanhThu.TamTinh;
             }
             ViewBag.DoanhThus = DoanhThus;
+            ViewBag.DoanhThu = DoanhThu;
             return View();
         }
     }

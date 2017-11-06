@@ -12,7 +12,7 @@ namespace FAHASA.Controllers
 {
     public class DaiLiesController : Controller
     {
-        private FahasaContext db = new FahasaContext();
+        private FAHASAEntities db = new FAHASAEntities();
 
         // GET: DaiLies
         public ActionResult Index()

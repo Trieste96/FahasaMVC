@@ -12,12 +12,12 @@ namespace FAHASA.Controllers
 {
     public class CT_BaoCaoBanHangController : Controller
     {
-        private FahasaContext db = new FahasaContext();
+       private FAHASAEntities db = new FAHASAEntities();
 
         // GET: CT_BaoCaoBanHang
         public ActionResult Index()
         {
-            var cTBaoCaoBanHangs = db.CTBaoCaoBanHangs.Include(c => c.BaoCaoBanHang).Include(c => c.Sach);
+            var cTBaoCaoBanHangs = db.CT_BaoCaoBanHang.Include(c => c.BaoCaoBanHang).Include(c => c.Sach);
             return View(cTBaoCaoBanHangs.ToList());
         }
 
@@ -28,7 +28,7 @@ namespace FAHASA.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CT_BaoCaoBanHang cT_BaoCaoBanHang = db.CTBaoCaoBanHangs.Find(id);
+            CT_BaoCaoBanHang cT_BaoCaoBanHang = db.CT_BaoCaoBanHang.Find(id);
             if (cT_BaoCaoBanHang == null)
             {
                 return HttpNotFound();
@@ -45,8 +45,8 @@ namespace FAHASA.Controllers
             ICollection<PhieuXuat> phieuXuats = db.PhieuXuats.Where(px => px.MaDaiLy == baoCaoBanHang.MaDaiLy && px.NgayGio <= baoCaoBanHang.NgayGio).ToList();
             foreach(var phieuXuat in phieuXuats)
             {
-                db.Entry<PhieuXuat>(phieuXuat).Collection(px => px.CTPhieuXuats).Load();
-                foreach(var ctpx in phieuXuat.CTPhieuXuats)
+                db.Entry<PhieuXuat>(phieuXuat).Collection(px => px.CT_PhieuXuat).Load();
+                foreach(var ctpx in phieuXuat.CT_PhieuXuat)
                 {
                     int flag = 0;
                     foreach(var sach in Saches)
@@ -76,15 +76,15 @@ namespace FAHASA.Controllers
             if (ModelState.IsValid)
             {
                 BaoCaoBanHang baoCaoBanHang = db.BaoCaoBanHangs.Find(cT_BaoCaoBanHang.MaBC);
-                CT_BaoCaoBanHang tempCTBCBH = db.CTBaoCaoBanHangs.Where(ctbcbh => ctbcbh.MaBC == cT_BaoCaoBanHang.MaBC && ctbcbh.MaSach == cT_BaoCaoBanHang.MaSach).FirstOrDefault();
+                CT_BaoCaoBanHang tempCTBCBH = db.CT_BaoCaoBanHang.Where(ctbcbh => ctbcbh.MaBC == cT_BaoCaoBanHang.MaBC && ctbcbh.MaSach == cT_BaoCaoBanHang.MaSach).FirstOrDefault();
                 if(tempCTBCBH != null)
                 {
                     int SoLuongTungBan = tempCTBCBH.SoLuong;
                     ICollection<BaoCaoBanHang> baoCaoBanHangs = db.BaoCaoBanHangs.Where(bcbh => bcbh.TinhTrang == true && bcbh.NgayGio < baoCaoBanHang.NgayGio).ToList();
                     foreach (var bcbhang in baoCaoBanHangs)
                     {
-                        db.Entry<BaoCaoBanHang>(bcbhang).Collection(bcbh => bcbh.CTBaoCaoBanHangs).Load();
-                        foreach (var ctbcbh in bcbhang.CTBaoCaoBanHangs)
+                        db.Entry<BaoCaoBanHang>(bcbhang).Collection(bcbh => bcbh.CT_BaoCaoBanHang).Load();
+                        foreach (var ctbcbh in bcbhang.CT_BaoCaoBanHang)
                         {
                             if (ctbcbh.MaSach == tempCTBCBH.MaSach)
                             {
@@ -97,8 +97,8 @@ namespace FAHASA.Controllers
                     ICollection<PhieuXuat> phieuXuats = db.PhieuXuats.Where(px => px.TinhTrang == true && px.MaDaiLy == baoCaoBanHang.MaDaiLy && px.NgayGio < baoCaoBanHang.NgayGio).ToList();
                     foreach (var phieuXuat in phieuXuats)
                     {
-                        db.Entry<PhieuXuat>(phieuXuat).Collection(px => px.CTPhieuXuats).Load();
-                        foreach (var ctpx in phieuXuat.CTPhieuXuats)
+                        db.Entry<PhieuXuat>(phieuXuat).Collection(px => px.CT_PhieuXuat).Load();
+                        foreach (var ctpx in phieuXuat.CT_PhieuXuat)
                         {
                             if (ctpx.MaSach == tempCTBCBH.MaSach)
                             {
@@ -114,8 +114,8 @@ namespace FAHASA.Controllers
                         ICollection<PhieuXuat> phieuXuat1s = db.PhieuXuats.Where(px => px.MaDaiLy == baoCaoBanHang.MaDaiLy && px.NgayGio <= baoCaoBanHang.NgayGio).ToList();
                         foreach (var phieuXuat in phieuXuats)
                         {
-                            db.Entry<PhieuXuat>(phieuXuat).Collection(px => px.CTPhieuXuats).Load();
-                            foreach (var ctpx in phieuXuat.CTPhieuXuats)
+                            db.Entry<PhieuXuat>(phieuXuat).Collection(px => px.CT_PhieuXuat).Load();
+                            foreach (var ctpx in phieuXuat.CT_PhieuXuat)
                             {
                                 int flag = 0;
                                 foreach (var sach in Saches)
@@ -146,8 +146,8 @@ namespace FAHASA.Controllers
                     ICollection<BaoCaoBanHang> baoCaoBanHangs = db.BaoCaoBanHangs.Where(bcbh => bcbh.TinhTrang == true && bcbh.NgayGio < baoCaoBanHang.NgayGio).ToList();
                     foreach(var bcbhang in baoCaoBanHangs)
                     {
-                        db.Entry<BaoCaoBanHang>(bcbhang).Collection(bcbh => bcbh.CTBaoCaoBanHangs).Load();
-                        foreach(var ctbcbh in bcbhang.CTBaoCaoBanHangs)
+                        db.Entry<BaoCaoBanHang>(bcbhang).Collection(bcbh => bcbh.CT_BaoCaoBanHang).Load();
+                        foreach(var ctbcbh in bcbhang.CT_BaoCaoBanHang)
                         {
                             if(ctbcbh.MaSach == cT_BaoCaoBanHang.MaSach)
                             {
@@ -160,8 +160,8 @@ namespace FAHASA.Controllers
                     ICollection<PhieuXuat> phieuXuats = db.PhieuXuats.Where(px => px.TinhTrang == true && px.MaDaiLy == baoCaoBanHang.MaDaiLy && px.NgayGio < baoCaoBanHang.NgayGio).ToList();
                     foreach(var phieuXuat in phieuXuats)
                     {
-                        db.Entry<PhieuXuat>(phieuXuat).Collection(px => px.CTPhieuXuats).Load();
-                        foreach(var ctpx in phieuXuat.CTPhieuXuats)
+                        db.Entry<PhieuXuat>(phieuXuat).Collection(px => px.CT_PhieuXuat).Load();
+                        foreach(var ctpx in phieuXuat.CT_PhieuXuat)
                         {
                             if(ctpx.MaSach == cT_BaoCaoBanHang.MaSach)
                             {
@@ -178,8 +178,8 @@ namespace FAHASA.Controllers
                         ICollection<PhieuXuat> phieuXuat1s = db.PhieuXuats.Where(px => px.MaDaiLy == baoCaoBanHang.MaDaiLy && px.NgayGio <= baoCaoBanHang.NgayGio).ToList();
                         foreach (var phieuXuat in phieuXuats)
                         {
-                            db.Entry<PhieuXuat>(phieuXuat).Collection(px => px.CTPhieuXuats).Load();
-                            foreach (var ctpx in phieuXuat.CTPhieuXuats)
+                            db.Entry<PhieuXuat>(phieuXuat).Collection(px => px.CT_PhieuXuat).Load();
+                            foreach (var ctpx in phieuXuat.CT_PhieuXuat)
                             {
                                 int flag = 0;
                                 foreach (var sach in Saches)
@@ -199,7 +199,7 @@ namespace FAHASA.Controllers
                         return View(cT_BaoCaoBanHang);
                     }
                     baoCaoBanHang.TongTien += cT_BaoCaoBanHang.ThanhTien;
-                    db.CTBaoCaoBanHangs.Add(cT_BaoCaoBanHang);
+                    db.CT_BaoCaoBanHang.Add(cT_BaoCaoBanHang);
                 }
                 db.Entry<BaoCaoBanHang>(baoCaoBanHang).State = EntityState.Modified;
                 db.SaveChanges();
@@ -218,7 +218,7 @@ namespace FAHASA.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CT_BaoCaoBanHang cT_BaoCaoBanHang = db.CTBaoCaoBanHangs.Find(id);
+            CT_BaoCaoBanHang cT_BaoCaoBanHang = db.CT_BaoCaoBanHang.Find(id);
             if (cT_BaoCaoBanHang == null)
             {
                 return HttpNotFound();
@@ -229,8 +229,8 @@ namespace FAHASA.Controllers
             ICollection<PhieuXuat> phieuXuats = db.PhieuXuats.Where(px => px.MaDaiLy == baoCaoBanHang.MaDaiLy && px.NgayGio <= baoCaoBanHang.NgayGio).ToList();
             foreach (var phieuXuat in phieuXuats)
             {
-                db.Entry<PhieuXuat>(phieuXuat).Collection(px => px.CTPhieuXuats).Load();
-                foreach (var ctpx in phieuXuat.CTPhieuXuats)
+                db.Entry<PhieuXuat>(phieuXuat).Collection(px => px.CT_PhieuXuat).Load();
+                foreach (var ctpx in phieuXuat.CT_PhieuXuat)
                 {
                     int flag = 0;
                     foreach (var sach in Saches)
@@ -260,15 +260,15 @@ namespace FAHASA.Controllers
             if (ModelState.IsValid)
             {
                 BaoCaoBanHang baoCaoBanHang = db.BaoCaoBanHangs.Find(cT_BaoCaoBanHang.MaBC);
-                CT_BaoCaoBanHang tempCTBCBH = db.CTBaoCaoBanHangs.Where(ctbcbh => ctbcbh.MaBC == cT_BaoCaoBanHang.MaBC && ctbcbh.MaSach == cT_BaoCaoBanHang.MaSach).FirstOrDefault();
+                CT_BaoCaoBanHang tempCTBCBH = db.CT_BaoCaoBanHang.Where(ctbcbh => ctbcbh.MaBC == cT_BaoCaoBanHang.MaBC && ctbcbh.MaSach == cT_BaoCaoBanHang.MaSach).FirstOrDefault();
                 if (tempCTBCBH != null && tempCTBCBH.ID != cT_BaoCaoBanHang.ID)
                 {
                     int SoLuongTungBan = tempCTBCBH.SoLuong;
                     ICollection<BaoCaoBanHang> baoCaoBanHangs = db.BaoCaoBanHangs.Where(bcbh => bcbh.TinhTrang == true && bcbh.NgayGio < baoCaoBanHang.NgayGio).ToList();
                     foreach (var bcbhang in baoCaoBanHangs)
                     {
-                        db.Entry<BaoCaoBanHang>(bcbhang).Collection(bcbh => bcbh.CTBaoCaoBanHangs).Load();
-                        foreach (var ctbcbh in bcbhang.CTBaoCaoBanHangs)
+                        db.Entry<BaoCaoBanHang>(bcbhang).Collection(bcbh => bcbh.CT_BaoCaoBanHang).Load();
+                        foreach (var ctbcbh in bcbhang.CT_BaoCaoBanHang)
                         {
                             if (ctbcbh.MaSach == tempCTBCBH.MaSach)
                             {
@@ -281,8 +281,8 @@ namespace FAHASA.Controllers
                     ICollection<PhieuXuat> phieuXuats = db.PhieuXuats.Where(px => px.TinhTrang == true && px.MaDaiLy == baoCaoBanHang.MaDaiLy && px.NgayGio < baoCaoBanHang.NgayGio).ToList();
                     foreach (var phieuXuat in phieuXuats)
                     {
-                        db.Entry<PhieuXuat>(phieuXuat).Collection(px => px.CTPhieuXuats).Load();
-                        foreach (var ctpx in phieuXuat.CTPhieuXuats)
+                        db.Entry<PhieuXuat>(phieuXuat).Collection(px => px.CT_PhieuXuat).Load();
+                        foreach (var ctpx in phieuXuat.CT_PhieuXuat)
                         {
                             if (ctpx.MaSach == tempCTBCBH.MaSach)
                             {
@@ -298,8 +298,8 @@ namespace FAHASA.Controllers
                         ICollection<PhieuXuat> phieuXuat1s = db.PhieuXuats.Where(px => px.MaDaiLy == baoCaoBanHang.MaDaiLy && px.NgayGio <= baoCaoBanHang.NgayGio).ToList();
                         foreach (var phieuXuat in phieuXuat1s)
                         {
-                            db.Entry<PhieuXuat>(phieuXuat).Collection(px => px.CTPhieuXuats).Load();
-                            foreach (var ctpx in phieuXuat.CTPhieuXuats)
+                            db.Entry<PhieuXuat>(phieuXuat).Collection(px => px.CT_PhieuXuat).Load();
+                            foreach (var ctpx in phieuXuat.CT_PhieuXuat)
                             {
                                 int flag = 0;
                                 foreach (var sach in Saches)
@@ -323,19 +323,19 @@ namespace FAHASA.Controllers
                     tempCTBCBH.SoLuong += cT_BaoCaoBanHang.SoLuong;
                     tempCTBCBH.GiaBan = cT_BaoCaoBanHang.GiaBan;
                     baoCaoBanHang.TongTien += tempCTBCBH.ThanhTien;
-                    CT_BaoCaoBanHang deletedCTBCBH = db.CTBaoCaoBanHangs.Find(cT_BaoCaoBanHang.ID);
-                    db.CTBaoCaoBanHangs.Remove(deletedCTBCBH);
+                    CT_BaoCaoBanHang deletedCTBCBH = db.CT_BaoCaoBanHang.Find(cT_BaoCaoBanHang.ID);
+                    db.CT_BaoCaoBanHang.Remove(deletedCTBCBH);
                 }
                 else
                 {
-                    CT_BaoCaoBanHang oldBaoCaoBanHang = db.CTBaoCaoBanHangs.Find(cT_BaoCaoBanHang.ID);
+                    CT_BaoCaoBanHang oldBaoCaoBanHang = db.CT_BaoCaoBanHang.Find(cT_BaoCaoBanHang.ID);
                     int SoLuongTungBan = 0;
                     baoCaoBanHang.TongTien -= oldBaoCaoBanHang.ThanhTien;
                     ICollection<BaoCaoBanHang> baoCaoBanHangs = db.BaoCaoBanHangs.Where(bcbh => bcbh.TinhTrang == true && bcbh.NgayGio < baoCaoBanHang.NgayGio).ToList();
                     foreach (var bcbhang in baoCaoBanHangs)
                     {
-                        db.Entry<BaoCaoBanHang>(bcbhang).Collection(bcbh => bcbh.CTBaoCaoBanHangs).Load();
-                        foreach (var ctbcbh in bcbhang.CTBaoCaoBanHangs)
+                        db.Entry<BaoCaoBanHang>(bcbhang).Collection(bcbh => bcbh.CT_BaoCaoBanHang).Load();
+                        foreach (var ctbcbh in bcbhang.CT_BaoCaoBanHang)
                         {
                             if (ctbcbh.MaSach == cT_BaoCaoBanHang.MaSach)
                             {
@@ -348,8 +348,8 @@ namespace FAHASA.Controllers
                     ICollection<PhieuXuat> phieuXuats = db.PhieuXuats.Where(px => px.TinhTrang == true && px.MaDaiLy == baoCaoBanHang.MaDaiLy && px.NgayGio < baoCaoBanHang.NgayGio).ToList();
                     foreach (var phieuXuat in phieuXuats)
                     {
-                        db.Entry<PhieuXuat>(phieuXuat).Collection(px => px.CTPhieuXuats).Load();
-                        foreach (var ctpx in phieuXuat.CTPhieuXuats)
+                        db.Entry<PhieuXuat>(phieuXuat).Collection(px => px.CT_PhieuXuat).Load();
+                        foreach (var ctpx in phieuXuat.CT_PhieuXuat)
                         {
                             if (ctpx.MaSach == cT_BaoCaoBanHang.MaSach)
                             {
@@ -366,8 +366,8 @@ namespace FAHASA.Controllers
                         ICollection<PhieuXuat> phieuXuat1s = db.PhieuXuats.Where(px => px.MaDaiLy == baoCaoBanHang.MaDaiLy && px.NgayGio <= baoCaoBanHang.NgayGio).ToList();
                         foreach (var phieuXuat in phieuXuat1s)
                         {
-                            db.Entry<PhieuXuat>(phieuXuat).Collection(px => px.CTPhieuXuats).Load();
-                            foreach (var ctpx in phieuXuat.CTPhieuXuats)
+                            db.Entry<PhieuXuat>(phieuXuat).Collection(px => px.CT_PhieuXuat).Load();
+                            foreach (var ctpx in phieuXuat.CT_PhieuXuat)
                             {
                                 int flag = 0;
                                 foreach (var sach in Saches)
@@ -387,7 +387,7 @@ namespace FAHASA.Controllers
                         return View(cT_BaoCaoBanHang);
                     }
                     baoCaoBanHang.TongTien += cT_BaoCaoBanHang.ThanhTien;
-                    CT_BaoCaoBanHang updatedBaoCaoBanHang = db.CTBaoCaoBanHangs.Find(cT_BaoCaoBanHang.ID);
+                    CT_BaoCaoBanHang updatedBaoCaoBanHang = db.CT_BaoCaoBanHang.Find(cT_BaoCaoBanHang.ID);
                     updatedBaoCaoBanHang.SoLuong = cT_BaoCaoBanHang.SoLuong;
                     updatedBaoCaoBanHang.GiaBan = cT_BaoCaoBanHang.GiaBan;
                     updatedBaoCaoBanHang.MaSach = cT_BaoCaoBanHang.MaSach;
@@ -409,7 +409,7 @@ namespace FAHASA.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CT_BaoCaoBanHang cT_BaoCaoBanHang = db.CTBaoCaoBanHangs.Find(id);
+            CT_BaoCaoBanHang cT_BaoCaoBanHang = db.CT_BaoCaoBanHang.Find(id);
             if (cT_BaoCaoBanHang == null)
             {
                 return HttpNotFound();
@@ -422,8 +422,8 @@ namespace FAHASA.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            CT_BaoCaoBanHang cT_BaoCaoBanHang = db.CTBaoCaoBanHangs.Find(id);
-            db.CTBaoCaoBanHangs.Remove(cT_BaoCaoBanHang);
+            CT_BaoCaoBanHang cT_BaoCaoBanHang = db.CT_BaoCaoBanHang.Find(id);
+            db.CT_BaoCaoBanHang.Remove(cT_BaoCaoBanHang);
             db.SaveChanges();
             return RedirectToAction("Details", "BaoCaoBanHangs", new { id = cT_BaoCaoBanHang.MaBC });
         }

@@ -12,7 +12,7 @@ namespace FAHASA.Controllers
 {
     public class CT_ThongKeChoNXBController : Controller
     {
-        private FahasaContext db = new FahasaContext();
+        private FAHASAEntities db = new FAHASAEntities();
 
         // GET: CT_ThongKeChoNXB
         public ActionResult Index()
@@ -45,8 +45,8 @@ namespace FAHASA.Controllers
             ICollection<PhieuNhap> phieuNhaps = db.PhieuNhaps.Where(pn => pn.MaNXB == thongKeChoNXB.MaNXB && pn.NgayGio <= thongKeChoNXB.NgayGio).ToList();
             foreach (var phieuNhap in phieuNhaps)
             {
-                db.Entry<PhieuNhap>(phieuNhap).Collection(px => px.CTPhieuNhaps).Load();
-                foreach (var ctpn in phieuNhap.CTPhieuNhaps)
+                db.Entry<PhieuNhap>(phieuNhap).Collection(px => px.CT_PhieuNhap).Load();
+                foreach (var ctpn in phieuNhap.CT_PhieuNhap)
                 {
                     int flag = 0;
                     foreach (var sach in Saches)
@@ -83,8 +83,8 @@ namespace FAHASA.Controllers
                     ICollection<ThongKeChoNXB> thongKeChoNXBs = db.ThongKeChoNXBs.Where(tkcnxb => tkcnxb.TinhTrang == true && tkcnxb.NgayGio < thongKeChoNXB.NgayGio).ToList();
                     foreach (var thongke in thongKeChoNXBs)
                     {
-                        db.Entry<ThongKeChoNXB>(thongke).Collection(tkcnxb => tkcnxb.CTThongKeChoNXBs).Load();
-                        foreach (var cttk in thongke.CTThongKeChoNXBs)
+                        db.Entry<ThongKeChoNXB>(thongke).Collection(tkcnxb => tkcnxb.CT_ThongKeChoNXB).Load();
+                        foreach (var cttk in thongke.CT_ThongKeChoNXB)
                         {
                             if(cttk.MaSach == tempCTTKCNXB.MaSach)
                             {
@@ -97,8 +97,8 @@ namespace FAHASA.Controllers
                     ICollection<PhieuNhap> phieuNhaps = db.PhieuNhaps.Where(pn => pn.TinhTrang == true && pn.NgayGio < thongKeChoNXB.NgayGio).ToList();
                     foreach (var phieuNhap in phieuNhaps)
                     {
-                        db.Entry<PhieuNhap>(phieuNhap).Collection(pn => pn.CTPhieuNhaps).Load();
-                        foreach (var ctpn in phieuNhap.CTPhieuNhaps)
+                        db.Entry<PhieuNhap>(phieuNhap).Collection(pn => pn.CT_PhieuNhap).Load();
+                        foreach (var ctpn in phieuNhap.CT_PhieuNhap)
                         {
                             if (ctpn.MaSach == tempCTTKCNXB.MaSach)
                             {
@@ -114,8 +114,8 @@ namespace FAHASA.Controllers
                         ICollection<PhieuNhap> phieuNhap1s = db.PhieuNhaps.Where(pn => pn.MaNXB == thongKeChoNXB.MaNXB && pn.NgayGio <= thongKeChoNXB.NgayGio).ToList();
                         foreach (var phieuNhap in phieuNhap1s)
                         {
-                            db.Entry<PhieuNhap>(phieuNhap).Collection(px => px.CTPhieuNhaps).Load();
-                            foreach (var ctpn in phieuNhap.CTPhieuNhaps)
+                            db.Entry<PhieuNhap>(phieuNhap).Collection(px => px.CT_PhieuNhap).Load();
+                            foreach (var ctpn in phieuNhap.CT_PhieuNhap)
                             {
                                 int flag = 0;
                                 foreach (var sach in Saches)
@@ -138,7 +138,7 @@ namespace FAHASA.Controllers
                     db.Entry(tempCTTKCNXB).State = EntityState.Modified;
                     thongKeChoNXB.TongTien -= tempCTTKCNXB.ThanhTien;
                     tempCTTKCNXB.SoLuong += cT_ThongKeChoNXB.SoLuong;
-                    tempCTTKCNXB.GiaNhap = cT_ThongKeChoNXB.GiaNhap;
+                    tempCTTKCNXB.Giá_nhập = cT_ThongKeChoNXB.Giá_nhập;
                     thongKeChoNXB.TongTien += tempCTTKCNXB.ThanhTien;
                 }
                 else
@@ -147,8 +147,8 @@ namespace FAHASA.Controllers
                     ICollection<ThongKeChoNXB> thongKeChoNXBs = db.ThongKeChoNXBs.Where(tkcnxb => tkcnxb.TinhTrang == true && tkcnxb.NgayGio < thongKeChoNXB.NgayGio).ToList();
                     foreach(var thongke in thongKeChoNXBs)
                     {
-                        db.Entry<ThongKeChoNXB>(thongke).Collection(tkcnxb => tkcnxb.CTThongKeChoNXBs).Load();
-                        foreach(var cttk in thongke.CTThongKeChoNXBs)
+                        db.Entry<ThongKeChoNXB>(thongke).Collection(tkcnxb => tkcnxb.CT_ThongKeChoNXB).Load();
+                        foreach(var cttk in thongke.CT_ThongKeChoNXB)
                         {
                             if(cttk.MaSach == cT_ThongKeChoNXB.MaSach)
                             {
@@ -161,8 +161,8 @@ namespace FAHASA.Controllers
                     ICollection<PhieuNhap> phieuNhaps = db.PhieuNhaps.Where(pn => pn.TinhTrang == true && pn.NgayGio < thongKeChoNXB.NgayGio).ToList();
                     foreach (var phieuNhap in phieuNhaps)
                     {
-                        db.Entry<PhieuNhap>(phieuNhap).Collection(pn => pn.CTPhieuNhaps).Load();
-                        foreach (var ctpn in phieuNhap.CTPhieuNhaps)
+                        db.Entry<PhieuNhap>(phieuNhap).Collection(pn => pn.CT_PhieuNhap).Load();
+                        foreach (var ctpn in phieuNhap.CT_PhieuNhap)
                         {
                             if (ctpn.MaSach == cT_ThongKeChoNXB.MaSach)
                             {
@@ -178,8 +178,8 @@ namespace FAHASA.Controllers
                         ICollection<PhieuNhap> phieuNhap1s = db.PhieuNhaps.Where(pn => pn.MaNXB == thongKeChoNXB.MaNXB && pn.NgayGio <= thongKeChoNXB.NgayGio).ToList();
                         foreach (var phieuNhap in phieuNhap1s)
                         {
-                            db.Entry<PhieuNhap>(phieuNhap).Collection(px => px.CTPhieuNhaps).Load();
-                            foreach (var ctpn in phieuNhap.CTPhieuNhaps)
+                            db.Entry<PhieuNhap>(phieuNhap).Collection(px => px.CT_PhieuNhap).Load();
+                            foreach (var ctpn in phieuNhap.CT_PhieuNhap)
                             {
                                 int flag = 0;
                                 foreach (var sach in Saches)
@@ -211,8 +211,8 @@ namespace FAHASA.Controllers
             ICollection<PhieuNhap> phieuNhap2s = db.PhieuNhaps.Where(pn => pn.MaNXB == thongKeChoNXB.MaNXB && pn.NgayGio <= thongKeChoNXB.NgayGio).ToList();
             foreach (var phieuNhap in phieuNhap2s)
             {
-                db.Entry<PhieuNhap>(phieuNhap).Collection(px => px.CTPhieuNhaps).Load();
-                foreach (var ctpn in phieuNhap.CTPhieuNhaps)
+                db.Entry<PhieuNhap>(phieuNhap).Collection(px => px.CT_PhieuNhap).Load();
+                foreach (var ctpn in phieuNhap.CT_PhieuNhap)
                 {
                     int flag = 0;
                     foreach (var sach in Sach1es)
@@ -250,8 +250,8 @@ namespace FAHASA.Controllers
             ICollection<PhieuNhap> phieuNhap1s = db.PhieuNhaps.Where(pn => pn.MaNXB == thongKeChoNXB.MaNXB && pn.NgayGio <= thongKeChoNXB.NgayGio).ToList();
             foreach (var phieuNhap in phieuNhap1s)
             {
-                db.Entry<PhieuNhap>(phieuNhap).Collection(px => px.CTPhieuNhaps).Load();
-                foreach (var ctpn in phieuNhap.CTPhieuNhaps)
+                db.Entry<PhieuNhap>(phieuNhap).Collection(px => px.CT_PhieuNhap).Load();
+                foreach (var ctpn in phieuNhap.CT_PhieuNhap)
                 {
                     int flag = 0;
                     foreach (var sach in Saches)
@@ -289,8 +289,8 @@ namespace FAHASA.Controllers
                     ICollection<ThongKeChoNXB> thongKeChoNXBs = db.ThongKeChoNXBs.Where(tkcnxb => tkcnxb.TinhTrang == true && tkcnxb.NgayGio < thongKeChoNXB.NgayGio).ToList();
                     foreach (var thongke in thongKeChoNXBs)
                     {
-                        db.Entry<ThongKeChoNXB>(thongke).Collection(tkcnxb => tkcnxb.CTThongKeChoNXBs).Load();
-                        foreach (var cttk in thongke.CTThongKeChoNXBs)
+                        db.Entry<ThongKeChoNXB>(thongke).Collection(tkcnxb => tkcnxb.CT_ThongKeChoNXB).Load();
+                        foreach (var cttk in thongke.CT_ThongKeChoNXB)
                         {
                             if (cttk.MaSach == tempCTTKCNXB.MaSach)
                             {
@@ -303,8 +303,8 @@ namespace FAHASA.Controllers
                     ICollection<PhieuNhap> phieuNhaps = db.PhieuNhaps.Where(pn => pn.TinhTrang == true && pn.NgayGio < thongKeChoNXB.NgayGio).ToList();
                     foreach (var phieuNhap in phieuNhaps)
                     {
-                        db.Entry<PhieuNhap>(phieuNhap).Collection(pn => pn.CTPhieuNhaps).Load();
-                        foreach (var ctpn in phieuNhap.CTPhieuNhaps)
+                        db.Entry<PhieuNhap>(phieuNhap).Collection(pn => pn.CT_PhieuNhap).Load();
+                        foreach (var ctpn in phieuNhap.CT_PhieuNhap)
                         {
                             if (ctpn.MaSach == tempCTTKCNXB.MaSach)
                             {
@@ -320,8 +320,8 @@ namespace FAHASA.Controllers
                         ICollection<PhieuNhap> phieuNhap1s = db.PhieuNhaps.Where(pn => pn.MaNXB == thongKeChoNXB.MaNXB && pn.NgayGio <= thongKeChoNXB.NgayGio).ToList();
                         foreach (var phieuNhap in phieuNhap1s)
                         {
-                            db.Entry<PhieuNhap>(phieuNhap).Collection(px => px.CTPhieuNhaps).Load();
-                            foreach (var ctpn in phieuNhap.CTPhieuNhaps)
+                            db.Entry<PhieuNhap>(phieuNhap).Collection(px => px.CT_PhieuNhap).Load();
+                            foreach (var ctpn in phieuNhap.CT_PhieuNhap)
                             {
                                 int flag = 0;
                                 foreach (var sach in Saches)
@@ -344,7 +344,7 @@ namespace FAHASA.Controllers
                     db.Entry(tempCTTKCNXB).State = EntityState.Modified;
                     thongKeChoNXB.TongTien -= tempCTTKCNXB.ThanhTien;
                     tempCTTKCNXB.SoLuong += cT_ThongKeChoNXB.SoLuong;
-                    tempCTTKCNXB.GiaNhap = cT_ThongKeChoNXB.GiaNhap;
+                    tempCTTKCNXB.Giá_nhập = cT_ThongKeChoNXB.Giá_nhập;
                     thongKeChoNXB.TongTien += tempCTTKCNXB.ThanhTien;
                     CT_ThongKeChoNXB deletedCTTKCNXB = db.CT_ThongKeChoNXB.Find(cT_ThongKeChoNXB.ID);
                     db.CT_ThongKeChoNXB.Remove(deletedCTTKCNXB);
@@ -357,8 +357,8 @@ namespace FAHASA.Controllers
                     ICollection<ThongKeChoNXB> thongKeChoNXBs = db.ThongKeChoNXBs.Where(tkcnxb => tkcnxb.TinhTrang == true && tkcnxb.NgayGio < thongKeChoNXB.NgayGio).ToList();
                     foreach (var thongke in thongKeChoNXBs)
                     {
-                        db.Entry<ThongKeChoNXB>(thongke).Collection(tkcnxb => tkcnxb.CTThongKeChoNXBs).Load();
-                        foreach (var cttk in thongke.CTThongKeChoNXBs)
+                        db.Entry<ThongKeChoNXB>(thongke).Collection(tkcnxb => tkcnxb.CT_ThongKeChoNXB).Load();
+                        foreach (var cttk in thongke.CT_ThongKeChoNXB)
                         {
                             if (cttk.MaSach == cT_ThongKeChoNXB.MaSach)
                             {
@@ -371,8 +371,8 @@ namespace FAHASA.Controllers
                     ICollection<PhieuNhap> phieuNhaps = db.PhieuNhaps.Where(pn => pn.TinhTrang == true && pn.NgayGio < thongKeChoNXB.NgayGio).ToList();
                     foreach (var phieuNhap in phieuNhaps)
                     {
-                        db.Entry<PhieuNhap>(phieuNhap).Collection(pn => pn.CTPhieuNhaps).Load();
-                        foreach (var ctpn in phieuNhap.CTPhieuNhaps)
+                        db.Entry<PhieuNhap>(phieuNhap).Collection(pn => pn.CT_PhieuNhap).Load();
+                        foreach (var ctpn in phieuNhap.CT_PhieuNhap)
                         {
                             if (ctpn.MaSach == cT_ThongKeChoNXB.MaSach)
                             {
@@ -388,8 +388,8 @@ namespace FAHASA.Controllers
                         ICollection<PhieuNhap> phieuNhap1s = db.PhieuNhaps.Where(pn => pn.MaNXB == thongKeChoNXB.MaNXB && pn.NgayGio <= thongKeChoNXB.NgayGio).ToList();
                         foreach (var phieuNhap in phieuNhap1s)
                         {
-                            db.Entry<PhieuNhap>(phieuNhap).Collection(px => px.CTPhieuNhaps).Load();
-                            foreach (var ctpn in phieuNhap.CTPhieuNhaps)
+                            db.Entry<PhieuNhap>(phieuNhap).Collection(px => px.CT_PhieuNhap).Load();
+                            foreach (var ctpn in phieuNhap.CT_PhieuNhap)
                             {
                                 int flag = 0;
                                 foreach (var sach in Saches)
@@ -412,7 +412,7 @@ namespace FAHASA.Controllers
                     thongKeChoNXB.TongTien += cT_ThongKeChoNXB.ThanhTien;
                     CT_ThongKeChoNXB updatedCTTKCNXB = db.CT_ThongKeChoNXB.Find(cT_ThongKeChoNXB.ID);
                     updatedCTTKCNXB.SoLuong = cT_ThongKeChoNXB.SoLuong;
-                    updatedCTTKCNXB.GiaNhap = cT_ThongKeChoNXB.GiaNhap;
+                    updatedCTTKCNXB.Giá_nhập = cT_ThongKeChoNXB.Giá_nhập;
                     updatedCTTKCNXB.MaSach = cT_ThongKeChoNXB.MaSach;
                     db.Entry(updatedCTTKCNXB).State = EntityState.Modified;
                 }
@@ -424,8 +424,8 @@ namespace FAHASA.Controllers
             ICollection<PhieuNhap> phieuNhap2s = db.PhieuNhaps.Where(pn => pn.MaNXB == thongKeChoNXB.MaNXB && pn.NgayGio <= thongKeChoNXB.NgayGio).ToList();
             foreach (var phieuNhap in phieuNhap2s)
             {
-                db.Entry<PhieuNhap>(phieuNhap).Collection(px => px.CTPhieuNhaps).Load();
-                foreach (var ctpn in phieuNhap.CTPhieuNhaps)
+                db.Entry<PhieuNhap>(phieuNhap).Collection(px => px.CT_PhieuNhap).Load();
+                foreach (var ctpn in phieuNhap.CT_PhieuNhap)
                 {
                     int flag = 0;
                     foreach (var sach in Sach1es)
