@@ -3,13 +3,10 @@ C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\roslyn\Micros
 C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\roslyn\Microsoft.CodeAnalysis.dll
 C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\roslyn\Microsoft.VisualBasic.Core.targets
 C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\roslyn\System.Collections.Immutable.dll
 C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\roslyn\System.Reflection.Metadata.dll
 C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\roslyn\vbc.exe
 C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\roslyn\VBCSCompiler.exe
-C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\FAHASA.dll.config
 C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\FAHASA.dll
 C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\FAHASA.pdb
@@ -43,7 +40,6 @@ C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\WebGrease.dll
 C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\System.Web.Helpers.xml
 C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\System.Web.Mvc.xml
-C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\System.Web.Optimization.xml
 C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\System.Web.Razor.xml
 C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\System.Web.WebPages.xml
 C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\System.Web.WebPages.Deployment.xml
@@ -67,3 +63,6 @@ C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\Microsoft.Owi
 C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\obj\Debug\FAHASA.csprojResolveAssemblyReference.cache
 C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\obj\Debug\FAHASA.dll
 C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\obj\Debug\FAHASA.pdb
+C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\roslyn\VBCSCompiler.exe.config
