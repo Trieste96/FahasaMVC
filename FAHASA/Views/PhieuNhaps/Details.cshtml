@@ -1,0 +1,97 @@
+﻿@model FAHASA.Models.PhieuNhap
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PhieuNhap</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NhanVien.TenNhanVien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhanVien.TenNhanVien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NhaXuatBan.TenNXB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhaXuatBan.TenNXB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NguoiGiaoSach)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NguoiGiaoSach)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayGio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayGio)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <a href="/CT_PhieuNhap/Create/@Model.MaPhieu">Insert CT_PhieuNhap</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            MaSach
+        </th>
+        <th>
+            TenSach
+        </th>
+        <th>
+            DonGiaNhap
+        </th>
+        <th>
+            SoLuong
+        </th>
+        <th>
+            ThanhTien
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model.CTPhieuNhaps)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaSach)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sach.TenSach)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonGiaNhap)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThanhTien)
+            </td>
+            <td>
+                <a href="/CT_PhieuNhap/Edit/@item.ID">Edit</a>
+                <a href="/CT_PhieuNhap/Delete/@item.ID">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaPhieu }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

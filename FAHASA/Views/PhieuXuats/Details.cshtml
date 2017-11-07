@@ -1,0 +1,97 @@
+﻿@model FAHASA.Models.PhieuXuat
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PhieuXuat</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DaiLy.TenDaiLy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DaiLy.TenDaiLy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayGio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayGio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NguoiNhan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NguoiNhan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TongTien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TongTien)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <a href="/CT_PhieuXuat/Create/@Model.MaPhieu">Insert CT_PhieuXuat</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            MaSach
+        </th>
+        <th>
+            TenSach
+        </th>
+        <th>
+            SoLuong
+        </th>
+        <th>
+            DonGiaXuat
+        </th>
+        <th>
+            ThanhTien
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model.CTPhieuXuats)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaSach)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sach.TenSach)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonGiaXuat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThanhTien)
+            </td>
+            <td>
+                <a href="/CT_PhieuXuat/Edit/@item.ID">Edit</a>
+                <a href="/CT_PhieuXuat/Delete/@item.ID">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaPhieu }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

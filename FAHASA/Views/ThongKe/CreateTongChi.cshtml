@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "CreateTongChi";
+}
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>CreateTongChi</h2>
+
+
+<form method="post" action="/ThongKe/CreateTongChi" >
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <label class="control-label col-md-2">NgayGio</label>
+            <div class="col-md-10">
+                <input id="NgayGio" name="NgayGio" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<hr />
+@if (ViewBag.ThongKes != null)
+{
+    <table class="table">
+        <tr>
+            <th>
+                MaNXB
+            </th>
+            <th>
+                SoTienPhaiTra
+            </th>
+        </tr>
+
+        @foreach (var item in ViewBag.ThongKes)
+        {
+            <tr>
+                <td>
+                    @item.MaNXB
+                </td>
+                <td>
+                    @item.SoTienPhaiTra
+                </td>
+            </tr>
+        }
+
+    </table>
+
+}
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

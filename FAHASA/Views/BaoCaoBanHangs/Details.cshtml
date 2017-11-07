@@ -1,0 +1,89 @@
+﻿@model FAHASA.Models.BaoCaoBanHang
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BaoCaoBanHang</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DaiLy.TenDaiLy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DaiLy.TenDaiLy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayGio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayGio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TongTien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TongTien)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <a href="/CT_BaoCaoBanHang/Create/@Model.MaBC">Insert CT_BaoCaoBanHang</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            MaSach
+        </th>
+        <th>
+            TenSach
+        </th>
+        <th>
+            GiaBan
+        </th>
+        <th>
+            SoLuong
+        </th>
+        <th>
+            ThanhTien
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model.CTBaoCaoBanHangs)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaSach)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sach.TenSach)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GiaBan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThanhTien)
+            </td>
+            <td>
+                <a href="/CT_BaoCaoBanHang/Edit/@item.ID">Edit</a>
+                <a href="/CT_BaoCaoBanHang/Delete/@item.ID">Delete</a>
+            </td>
+        </tr>
+    }
+    </table>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.MaBC }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>

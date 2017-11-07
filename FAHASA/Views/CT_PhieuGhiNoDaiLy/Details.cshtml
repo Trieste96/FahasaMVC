@@ -1,0 +1,74 @@
+﻿@model FAHASA.Models.CT_PhieuGhiNoDaiLy
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CT_PhieuGhiNoDaiLy</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PhieuGhiNoDaiLy.MaPhieu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhieuGhiNoDaiLy.MaPhieu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sach.TenSach)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sach.TenSach)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DonGiaXuat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonGiaXuat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuongTon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuongTon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TienNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TienNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuongDaXuat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuongDaXuat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuongBanDuoc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuongBanDuoc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

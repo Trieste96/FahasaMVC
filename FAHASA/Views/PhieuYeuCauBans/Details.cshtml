@@ -1,0 +1,70 @@
+﻿@model FAHASA.Models.PhieuYeuCauBan
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PhieuYeuCauBan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NhaXuatBan.TenNXB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhaXuatBan.TenNXB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayGio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayGio)
+        </dd>
+    </dl>
+</div>
+<p>
+    <a href="/CT_PhieuYeuCauBan/Create/@Model.MaPhieu">Insert CT_PhieuYeuCauBan</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            MaSach
+        </th>
+        <th>
+            TenSach
+        </th>
+        <th>
+            SoLuong
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model.CTPhieuYeuCauBans)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaSach)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sach.TenSach)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuong)
+            </td>
+            <td>
+                <a href="/CT_PhieuYeuCauBan/Edit/@item.ID">Edit</a>
+                <a href="/CT_PhieuYeuCauBan/Delete/@item.ID">Delete</a>
+
+            </td>
+
+</tr>
+    }
+</table>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaPhieu }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

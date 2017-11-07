@@ -1,0 +1,69 @@
+﻿@model IEnumerable<FAHASA.Models.CT_PhieuGhiNoDaiLy>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PhieuGhiNoDaiLy.MaPhieu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sach.TenSach)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonGiaXuat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuongTon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TienNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuongDaXuat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuongBanDuoc)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhieuGhiNoDaiLy.MaPhieu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sach.TenSach)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonGiaXuat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuongTon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TienNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuongDaXuat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuongBanDuoc)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

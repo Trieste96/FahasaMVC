@@ -1,0 +1,80 @@
+﻿@model FAHASA.Models.CT_PhieuGhiNoDaiLy
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>CT_PhieuGhiNoDaiLy</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PhieuGhiNoDaiLy.MaPhieu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhieuGhiNoDaiLy.MaPhieu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sach.TenSach)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sach.TenSach)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DonGiaXuat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonGiaXuat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuongTon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuongTon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TienNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TienNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuongDaXuat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuongDaXuat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuongBanDuoc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuongBanDuoc)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -12,6 +12,22 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.BaoCaoBanHang.MaBC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BaoCaoBanHang.MaBC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sach.TenSach)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sach.TenSach)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.GiaBan)
         </dt>
 
@@ -35,22 +51,6 @@
             @Html.DisplayFor(model => model.ThanhTien)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.BaoCaoBanHang.MaBC)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BaoCaoBanHang.MaBC)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Sach.TenSach)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Sach.TenSach)
-        </dd>
-
     </dl>
 
     @using (Html.BeginForm()) {
@@ -58,7 +58,7 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Edit", "BaoCaoBanHang", new { id=Model.MaBC}, null)
+            @Html.ActionLink("Back to List", "Index")
         </div>
     }
 </div>
