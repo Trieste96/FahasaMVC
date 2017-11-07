@@ -17,7 +17,7 @@ namespace FAHASA.Models
         public int ID { get; set; }
         public int GiaBan { get; set; }
         public int SoLuong { get; set; }
-        public Nullable<int> ThanhTien { get; set; }
+        public int ThanhTien { get; set; }
         public int MaBC { get; set; }
         public int MaSach { get; set; }
     

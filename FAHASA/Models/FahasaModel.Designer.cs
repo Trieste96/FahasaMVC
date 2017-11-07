@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\e\Documents\Visual Studio 2015\Projects\FAHASA\FAHASA\Models\FahasaModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Hung\source\repos\FahasaMVC\FAHASA\Models\FahasaModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

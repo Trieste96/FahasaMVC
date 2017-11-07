@@ -135,10 +135,10 @@ namespace FAHASA.Controllers
                         return View(cT_BaoCaoBanHang);
                     }
                     db.Entry(tempCTBCBH).State = EntityState.Modified;
-                    baoCaoBanHang.TongTien -= tempCTBCBH.ThanhTien.Value;
+                    baoCaoBanHang.TongTien -= tempCTBCBH.ThanhTien;
                     tempCTBCBH.SoLuong += cT_BaoCaoBanHang.SoLuong;
                     tempCTBCBH.GiaBan = cT_BaoCaoBanHang.GiaBan;
-                    baoCaoBanHang.TongTien += tempCTBCBH.ThanhTien.Value;
+                    baoCaoBanHang.TongTien += tempCTBCBH.ThanhTien;
                 }
                 else
                 {
@@ -198,7 +198,7 @@ namespace FAHASA.Controllers
                         ViewBag.MaSach = new SelectList(Saches, "MaSach", "TenSach");
                         return View(cT_BaoCaoBanHang);
                     }
-                    baoCaoBanHang.TongTien += cT_BaoCaoBanHang.ThanhTien.Value;
+                    baoCaoBanHang.TongTien += cT_BaoCaoBanHang.ThanhTien;
                     db.CT_BaoCaoBanHang.Add(cT_BaoCaoBanHang);
                 }
                 db.Entry<BaoCaoBanHang>(baoCaoBanHang).State = EntityState.Modified;
@@ -319,10 +319,10 @@ namespace FAHASA.Controllers
                         return View(cT_BaoCaoBanHang);
                     }
                     db.Entry(tempCTBCBH).State = EntityState.Modified;
-                    baoCaoBanHang.TongTien -= tempCTBCBH.ThanhTien.Value;
+                    baoCaoBanHang.TongTien -= tempCTBCBH.ThanhTien;
                     tempCTBCBH.SoLuong += cT_BaoCaoBanHang.SoLuong;
                     tempCTBCBH.GiaBan = cT_BaoCaoBanHang.GiaBan;
-                    baoCaoBanHang.TongTien += tempCTBCBH.ThanhTien.Value;
+                    baoCaoBanHang.TongTien += tempCTBCBH.ThanhTien;
                     CT_BaoCaoBanHang deletedCTBCBH = db.CT_BaoCaoBanHang.Find(cT_BaoCaoBanHang.ID);
                     db.CT_BaoCaoBanHang.Remove(deletedCTBCBH);
                 }
@@ -330,7 +330,7 @@ namespace FAHASA.Controllers
                 {
                     CT_BaoCaoBanHang oldBaoCaoBanHang = db.CT_BaoCaoBanHang.Find(cT_BaoCaoBanHang.ID);
                     int SoLuongTungBan = 0;
-                    baoCaoBanHang.TongTien -= oldBaoCaoBanHang.ThanhTien.Value;
+                    baoCaoBanHang.TongTien -= oldBaoCaoBanHang.ThanhTien;
                     ICollection<BaoCaoBanHang> baoCaoBanHangs = db.BaoCaoBanHangs.Where(bcbh => bcbh.TinhTrang == true && bcbh.NgayGio < baoCaoBanHang.NgayGio).ToList();
                     foreach (var bcbhang in baoCaoBanHangs)
                     {
@@ -386,7 +386,7 @@ namespace FAHASA.Controllers
                         ViewBag.MaSach = new SelectList(Saches, "MaSach", "TenSach");
                         return View(cT_BaoCaoBanHang);
                     }
-                    baoCaoBanHang.TongTien += cT_BaoCaoBanHang.ThanhTien.Value;
+                    baoCaoBanHang.TongTien += cT_BaoCaoBanHang.ThanhTien;
                     CT_BaoCaoBanHang updatedBaoCaoBanHang = db.CT_BaoCaoBanHang.Find(cT_BaoCaoBanHang.ID);
                     updatedBaoCaoBanHang.SoLuong = cT_BaoCaoBanHang.SoLuong;
                     updatedBaoCaoBanHang.GiaBan = cT_BaoCaoBanHang.GiaBan;

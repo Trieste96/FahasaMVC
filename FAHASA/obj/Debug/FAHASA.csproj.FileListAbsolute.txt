@@ -43,6 +43,7 @@ C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\WebGrease.dll
 C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\System.Web.Helpers.xml
 C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\System.Web.Mvc.xml
+C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\System.Web.Optimization.xml
 C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\System.Web.Razor.xml
 C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\System.Web.WebPages.xml
 C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\System.Web.WebPages.Deployment.xml
