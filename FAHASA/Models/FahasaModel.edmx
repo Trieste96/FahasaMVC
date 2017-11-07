@@ -602,7 +602,7 @@
           <Property Name="NgayGio" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="TongTien" Type="Int32" Nullable="false" />
           <Property Name="MaDaiLy" Type="Int32" Nullable="false" />
-          <Property Name="TinhTrang" Type="Boolean" Nullable="false" />
+          <Property Name="TinhTrang" Type="Boolean" Nullable="false" DefaultValue="True" />
           <NavigationProperty Name="DaiLy" Relationship="Self.FK__BaoCaoBan__MaDai__29572725" FromRole="BaoCaoBanHang" ToRole="DaiLy" />
           <NavigationProperty Name="CT_BaoCaoBanHang" Relationship="Self.FK__CT_BaoCaoB__MaBC__2D27B809" FromRole="BaoCaoBanHang" ToRole="CT_BaoCaoBanHang" />
         </EntityType>
@@ -744,7 +744,7 @@
           <Property Name="MaPhieu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NgayGio" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="TongNo" Type="Int32" Nullable="false" />
-          <Property Name="TinhTrang" Type="Boolean" Nullable="false" />
+          <Property Name="TinhTrang" Type="Boolean" Nullable="false" DefaultValue="True" />
           <NavigationProperty Name="CT_PhieuGhiNoDaiLy" Relationship="Self.FK__CT_PhieuG__MaPhi__440B1D61" FromRole="PhieuGhiNoDaiLy" ToRole="CT_PhieuGhiNoDaiLy" />
         </EntityType>
         <EntityType Name="PhieuKiemKho">
@@ -753,7 +753,7 @@
           </Key>
           <Property Name="MaPhieu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NgayGio" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="TinhTrang" Type="Boolean" Nullable="false" />
+          <Property Name="TinhTrang" Type="Boolean" Nullable="false" DefaultValue="True" />
           <NavigationProperty Name="CT_PhieuKiemKho" Relationship="Self.FK__CT_PhieuK__MaPhi__3D5E1FD2" FromRole="PhieuKiemKho" ToRole="CT_PhieuKiemKho" />
         </EntityType>
         <EntityType Name="PhieuNhap">
@@ -765,7 +765,7 @@
           <Property Name="NgayGio" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="MaNXB" Type="Int32" Nullable="false" />
           <Property Name="MaNhanVien" Type="Int32" Nullable="false" />
-          <Property Name="TinhTrang" Type="Boolean" Nullable="false" />
+          <Property Name="TinhTrang" Type="Boolean" Nullable="false" DefaultValue="True" />
           <NavigationProperty Name="CT_PhieuNhap" Relationship="Self.FK__CT_PhieuN__MaPhi__6383C8BA" FromRole="PhieuNhap" ToRole="CT_PhieuNhap" />
           <NavigationProperty Name="NhanVien" Relationship="Self.FK__PhieuNhap__MaNha__5FB337D6" FromRole="PhieuNhap" ToRole="NhanVien" />
           <NavigationProperty Name="NhaXuatBan" Relationship="Self.FK__PhieuNhap__MaNXB__5EBF139D" FromRole="PhieuNhap" ToRole="NhaXuatBan" />
@@ -779,7 +779,7 @@
           <Property Name="NguoiNhan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TongTien" Type="Int32" />
           <Property Name="MaDaiLy" Type="Int32" Nullable="false" />
-          <Property Name="TinhTrang" Type="Boolean" Nullable="false" />
+          <Property Name="TinhTrang" Type="Boolean" Nullable="false" DefaultValue="True" />
           <NavigationProperty Name="CT_PhieuXuat" Relationship="Self.FK__CT_PhieuX__MaPhi__534D60F1" FromRole="PhieuXuat" ToRole="CT_PhieuXuat" />
           <NavigationProperty Name="DaiLy" Relationship="Self.FK__PhieuXuat__MaDai__4F7CD00D" FromRole="PhieuXuat" ToRole="DaiLy" />
         </EntityType>
@@ -790,7 +790,7 @@
           <Property Name="MaPhieu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NgayGio" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="MaNXB" Type="Int32" Nullable="false" />
-          <Property Name="TinhTrang" Type="Boolean" Nullable="false" />
+          <Property Name="TinhTrang" Type="Boolean" Nullable="false" DefaultValue="True" />
           <NavigationProperty Name="CT_PhieuYeuCauBan" Relationship="Self.FK__CT_PhieuY__MaPhi__5AEE82B9" FromRole="PhieuYeuCauBan" ToRole="CT_PhieuYeuCauBan" />
           <NavigationProperty Name="NhaXuatBan" Relationship="Self.FK__PhieuYeuC__MaNXB__571DF1D5" FromRole="PhieuYeuCauBan" ToRole="NhaXuatBan" />
         </EntityType>
@@ -801,7 +801,7 @@
           <Property Name="MaPhieu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NgayGio" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="MaDaiLy" Type="Int32" Nullable="false" />
-          <Property Name="TinhTrang" Type="Boolean" Nullable="false" />
+          <Property Name="TinhTrang" Type="Boolean" Nullable="false" DefaultValue="True" />
           <NavigationProperty Name="CT_PhieuYeuCauMua" Relationship="Self.FK__CT_PhieuY__MaPhi__4BAC3F29" FromRole="PhieuYeuCauMua" ToRole="CT_PhieuYeuCauMua" />
           <NavigationProperty Name="DaiLy" Relationship="Self.FK__PhieuYeuC__MaDai__47DBAE45" FromRole="PhieuYeuCauMua" ToRole="DaiLy" />
         </EntityType>

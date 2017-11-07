@@ -17,6 +17,7 @@ namespace FAHASA.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public PhieuNhap()
         {
+            this.TinhTrang = true;
             this.CT_PhieuNhap = new HashSet<CT_PhieuNhap>();
         }
     
