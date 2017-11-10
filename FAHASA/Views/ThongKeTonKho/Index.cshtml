@@ -1,0 +1,56 @@
+﻿@model IEnumerable<FAHASA.Models.Sach>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenSach)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LinhVuc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GiaXuat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GiaNhap)
+        </th>
+        <th>
+            Số lượng tồn
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenSach)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LinhVuc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GiaXuat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GiaNhap)
+        </td>
+        <td>
+            @{
+                int tongNhap = item.CT_PhieuNhap.Where(ctpn => ctpn.PhieuNhap.NgayGio <= ViewBag.NgayGio).Sum(ctpn => ctpn.SoLuong);
+                int tongXuat = item.CT_PhieuXuat.Where(ctpx => ctpx.PhieuXuat.NgayGio <= ViewBag.NgayGio).Sum(ctpx => ctpx.SoLuong);
+                Html.Display( (tongNhap - tongXuat).ToString() );
+            }
+           
+        </td>
+    </tr>
+}
+
+</table>

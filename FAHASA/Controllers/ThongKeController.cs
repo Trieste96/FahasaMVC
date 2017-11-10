@@ -21,6 +21,12 @@ namespace FAHASA.Controllers
         {
             return View();
         }
+
+        //GET
+        public ActionResult XemTonKho()
+        {
+            return View();
+        }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CreateTongChi(DateTime NgayGio)
@@ -67,7 +73,7 @@ namespace FAHASA.Controllers
                 doanhThu.TenSach = sach.TenSach;
                 int TongSoLuongNhap = 0;
                 int TongGiaNhap = 0;
-                ICollection<PhieuNhap> phieuNhaps = db.PhieuNhaps.Where(pn =>pn.TinhTrang == true && pn.NgayGio >= TuNgayGio && pn.NgayGio <= DenNgayGio).ToList();
+                ICollection<PhieuNhap> phieuNhaps = db.PhieuNhaps.Where(pn => pn.TinhTrang == true && pn.NgayGio >= TuNgayGio && pn.NgayGio <= DenNgayGio).ToList();
                 foreach (var phieuNhap in phieuNhaps)
                 {
                     db.Entry(phieuNhap).Collection(pn => pn.CT_PhieuNhap).Load();
@@ -105,6 +111,24 @@ namespace FAHASA.Controllers
             ViewBag.DoanhThus = DoanhThus;
             ViewBag.DoanhThu = DoanhThu;
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult XemTonKho(DateTime NgayGio)
+        {
+            ICollection<SachTon> sachTons = new List<SachTon>();
+
+            foreach(var sach in db.Saches)
+            {
+                SachTon sachTon = new SachTon();
+                sachTon.sach = sach;
+                sachTon.soLuongTon = sach.CT_PhieuNhap.Where(ctpn => ctpn.PhieuNhap.NgayGio <= NgayGio).Sum(ctpn => ctpn.SoLuong)
+                                    - sach.CT_PhieuXuat.Where(ctpx => ctpx.PhieuXuat.NgayGio <= NgayGio).Sum(ctpx => ctpx.SoLuong);
+                sachTons.Add(sachTon);
+            }
+            ViewBag.NgayGio = NgayGio;
+            return View(sachTons);
         }
     }
 }

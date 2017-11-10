@@ -19,7 +19,7 @@
         <div class="form-group">
             <label class="control-label col-md-2">NgayGio</label>
             <div class="col-md-10">
-                <input id="NgayGio" name="NgayGio" />
+                @Html.TextBox("NgayGio", null, new { @class = "form-control datepicker", @type = "date", @Value = DateTime.UtcNow })
             </div>
         </div>
 

@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "CreateTongChi";
+}
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Xem tồn kho</h2>
+@model IEnumerable<FAHASA.Models.SachTon>
+
+<form method="post" action="/ThongKe/XemTonKho" >
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <label class="control-label col-md-2">NgayGio</label>
+            <div class="col-md-10">
+                @Html.TextBox("NgayGio", null, new { @class = "form-control datepicker", @type="date", @Value=DateTime.UtcNow })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<hr />
+@if (Model != null)
+{
+    Html.Display(String.Format("Danh sách tồn kho tại thời điểm: %s", ViewBag.NgayGio as DateTime?) );
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.sach.TenSach)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sach.LinhVuc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sach.GiaXuat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sach.GiaNhap)
+            </th>
+            <th>
+                Số lượng tồn
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sach.TenSach)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sach.LinhVuc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sach.GiaXuat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sach.GiaNhap)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.soLuongTon)
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

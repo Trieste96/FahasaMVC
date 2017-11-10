@@ -13,13 +13,13 @@
         <div class="form-group">
             <label class="control-label col-md-2">TuNgayGio</label>
             <div class="col-md-10">
-                <input id="TuNgayGio" name="TuNgayGio" />
+                @Html.TextBox("TuNgayGio", null, new { @class = "form-control datepicker", @type = "date", @Value = DateTime.UtcNow })
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-md-2">DenNgayGio</label>
             <div class="col-md-10">
-                <input id="DenNgayGio" name="DenNgayGio" />
+                @Html.TextBox("DenNgayGio", null, new { @class = "form-control datepicker", @type = "date", @Value = DateTime.UtcNow })
             </div>
         </div>
         <div class="form-group">

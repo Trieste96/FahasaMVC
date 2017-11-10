@@ -185,6 +185,7 @@
     <Compile Include="Controllers\SachesController.cs" />
     <Compile Include="Controllers\ThongKeChoNXBsController.cs" />
     <Compile Include="Controllers\ThongKeController.cs" />
+    <Compile Include="Controllers\ThongKeTonKhoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -264,6 +265,7 @@
     <Compile Include="Models\Sach.cs">
       <DependentUpon>FahasaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SachTon.cs" />
     <Compile Include="Models\ThongKe.cs" />
     <Compile Include="Models\ThongKeChoNXB.cs">
       <DependentUpon>FahasaModel.tt</DependentUpon>
@@ -446,6 +448,12 @@
     <Content Include="Views\ThongKe\Index.cshtml" />
     <Content Include="Views\ThongKe\CreateTongChi.cshtml" />
     <Content Include="Views\ThongKe\CreateDoanhThu.cshtml" />
+    <Content Include="Views\ThongKeTonKho\Create.cshtml" />
+    <Content Include="Views\ThongKeTonKho\Delete.cshtml" />
+    <Content Include="Views\ThongKeTonKho\Details.cshtml" />
+    <Content Include="Views\ThongKeTonKho\Edit.cshtml" />
+    <Content Include="Views\ThongKeTonKho\Index.cshtml" />
+    <Content Include="Views\ThongKe\XemTonKho.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
