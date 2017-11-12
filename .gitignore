@@ -85,10 +85,10 @@ _[Ss]cripts
 */packages/
 
 # Include packages/build/, which is used as an MSBuild target
-!**/packages/build/
+**/packages/build/
 
 # Uncomment if necessary; generally it's regenerated when needed
-#!**/packages/repositories.config
+**/packages/repositories.config
 
 # Ignore other intermediate files that NuGet might create. project.lock.json is used in conjunction
 # with project.json; project.assets.json is used in conjunction with the PackageReference format.
