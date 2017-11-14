@@ -4,10 +4,10 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Thông Tin Phiếu Kiểm Kho</h2>
 
 <div>
-    <h4>PhieuKiemKho</h4>
+    <h4></h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -20,7 +20,7 @@
     </dl>
 </div>
 <p>
-    <a href="/CT_PhieuKiemKho/Create/@Model.MaPhieu">Insert CT_PhieuKiemKho</a>
+    <a href="/CT_PhieuKiemKho/Create/@Model.MaPhieu">Thêm Chi Tiết Phiếu Kiểm Kho</a>
 </p>
 <table class="table">
     <tr>
@@ -35,7 +35,7 @@
         </th>
         <th></th>
     </tr>
-    @foreach (var item in Model.CTPhieuKiemKhoes)
+    @foreach (var item in Model.CT_PhieuKiemKho)
     {
         <tr>
             <td>
@@ -48,13 +48,13 @@
                 @Html.DisplayFor(modelItem => item.SoLuongTon)
             </td>
             <td>
-                <a href="/CT_PhieuKiemKho/Edit/@item.ID">Edit</a>
-                <a href="/CT_PhieuKiemKho/Delete/@item.ID">Delete</a>
+                <a href="/CT_PhieuKiemKho/Edit/@item.ID">Sửa |</a>
+                <a href="/CT_PhieuKiemKho/Delete/@item.ID">Xoa</a>
             </td>
         </tr>
     }
 </table>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MaPhieu }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.MaPhieu }) |
+    @Html.ActionLink("Quay Về Danh Sách Phiếu Kiểm Kho", "Index")
 </p>

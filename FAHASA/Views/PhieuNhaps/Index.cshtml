@@ -4,10 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Danh Sách Phiếu Nhập</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Thêm Phiếu Nhập", "Create")
 </p>
 <table class="table">
     <tr>
@@ -41,9 +41,9 @@
             @Html.DisplayFor(modelItem => item.NgayGio)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaPhieu }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaPhieu }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaPhieu })
+            @Html.ActionLink("Sửa", "Edit", new { id=item.MaPhieu }) |
+            @Html.ActionLink("Chi Tiết", "Details", new { id=item.MaPhieu }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MaPhieu })
         </td>
     </tr>
 }

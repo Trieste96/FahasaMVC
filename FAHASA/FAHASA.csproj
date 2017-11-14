@@ -355,11 +355,6 @@
     <Content Include="Views\DaiLies\Details.cshtml" />
     <Content Include="Views\DaiLies\Edit.cshtml" />
     <Content Include="Views\DaiLies\Index.cshtml" />
-    <Content Include="Views\BaoCaoBanHangs\Create.cshtml" />
-    <Content Include="Views\BaoCaoBanHangs\Delete.cshtml" />
-    <Content Include="Views\BaoCaoBanHangs\Details.cshtml" />
-    <Content Include="Views\BaoCaoBanHangs\Edit.cshtml" />
-    <Content Include="Views\BaoCaoBanHangs\Index.cshtml" />
     <Content Include="Views\CT_BaoCaoBanHang\Create.cshtml" />
     <Content Include="Views\CT_BaoCaoBanHang\Delete.cshtml" />
     <Content Include="Views\CT_BaoCaoBanHang\Details.cshtml" />
@@ -454,6 +449,11 @@
     <Content Include="Views\ThongKeTonKho\Edit.cshtml" />
     <Content Include="Views\ThongKeTonKho\Index.cshtml" />
     <Content Include="Views\ThongKe\XemTonKho.cshtml" />
+    <Content Include="Views\BaoCaoBanHang\Create.cshtml" />
+    <Content Include="Views\BaoCaoBanHang\Delete.cshtml" />
+    <Content Include="Views\BaoCaoBanHang\Details.cshtml" />
+    <Content Include="Views\BaoCaoBanHang\Edit.cshtml" />
+    <Content Include="Views\BaoCaoBanHang\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
