@@ -66,7 +66,6 @@ C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\System.Web.We
 C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\System.Web.WebPages.dll
 C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\System.Web.WebPages.Razor.dll
 C:\Users\e\documents\visual studio 2015\Projects\FAHASA\FAHASA\bin\WebGrease.dll
-D:\TAILIEUCNTT\XÂY DỰNG PM THEO MÔ HÌNH PHÂN LỚP\Binh\FahasaMVC\FAHASA\obj\Debug\FAHASA.csprojResolveAssemblyReference.cache
 D:\TAILIEUCNTT\XÂY DỰNG PM THEO MÔ HÌNH PHÂN LỚP\Binh\FahasaMVC\FAHASA\obj\Debug\FAHASA.csproj.CoreCompileInputs.cache
 D:\TAILIEUCNTT\XÂY DỰNG PM THEO MÔ HÌNH PHÂN LỚP\Binh\FahasaMVC\FAHASA\obj\Debug\FAHASA.dll
 D:\TAILIEUCNTT\XÂY DỰNG PM THEO MÔ HÌNH PHÂN LỚP\Binh\FahasaMVC\FAHASA\obj\Debug\FAHASA.pdb
@@ -135,3 +134,4 @@ D:\TAILIEUCNTT\XÂY DỰNG PM THEO MÔ HÌNH PHÂN LỚP\Binh\FahasaMVC\FAHASA\b
 D:\TAILIEUCNTT\XÂY DỰNG PM THEO MÔ HÌNH PHÂN LỚP\Binh\FahasaMVC\FAHASA\bin\System.Web.WebPages.Deployment.xml
 D:\TAILIEUCNTT\XÂY DỰNG PM THEO MÔ HÌNH PHÂN LỚP\Binh\FahasaMVC\FAHASA\bin\System.Web.WebPages.Razor.xml
 D:\TAILIEUCNTT\XÂY DỰNG PM THEO MÔ HÌNH PHÂN LỚP\Binh\FahasaMVC\FAHASA\bin\Newtonsoft.Json.xml
+D:\TAILIEUCNTT\XÂY DỰNG PM THEO MÔ HÌNH PHÂN LỚP\Binh\FahasaMVC\FAHASA\obj\Debug\FAHASA.csprojResolveAssemblyReference.cache

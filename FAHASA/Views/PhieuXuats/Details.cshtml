@@ -4,10 +4,10 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Thông Tin Phiếu Xuất</h2>
 
 <div>
-    <h4>PhieuXuat</h4>
+    <h4></h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -45,7 +45,7 @@
     </dl>
 </div>
 <p>
-    <a href="/CT_PhieuXuat/Create/@Model.MaPhieu">Insert CT_PhieuXuat</a>
+    <a href="/CT_PhieuXuat/Create/@Model.MaPhieu">Thêm Chi Tiết Phiếu Xuất</a>
 </p>
 <table class="table">
     <tr>
@@ -85,13 +85,13 @@
                 @Html.DisplayFor(modelItem => item.ThanhTien)
             </td>
             <td>
-                <a href="/CT_PhieuXuat/Edit/@item.ID">Edit</a>
-                <a href="/CT_PhieuXuat/Delete/@item.ID">Delete</a>
+                <a href="/CT_PhieuXuat/Edit/@item.ID">Sửa |</a>
+                <a href="/CT_PhieuXuat/Delete/@item.ID">Xóa</a>
             </td>
         </tr>
     }
 </table>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MaPhieu }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.MaPhieu }) |
+    @Html.ActionLink("Quay Về Danh Sách Phiếu Xuất", "Index")
 </p>
